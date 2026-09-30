@@ -79,14 +79,14 @@ link_6 = Link(
     geometry=mesh("link_6.stl", [0.7, 0.7, 0.7]),
 )
  
-robot = Robot(
+tx2_60 = Robot(
     [base_link, link_1, link_2, link_3, link_4, link_5, link_6],
     name="Staubli_TX2_60_visual",
 )
  
  
 if __name__ == "__main__":
-    print(robot)
+    print(tx2_60)
  
     # NOTE: unlike tx2_60.py's DH model, this model's joint zero positions
     # come straight from the URDF, so they don't line up with the old
@@ -95,7 +95,7 @@ if __name__ == "__main__":
     # the datasheet's 670mm) -- it's the equivalent "arm fully extended"
     # pose for this model.
     q_extended = np.array([0, -90 * deg, 0, 0, 0, 0])
-    T = robot.fkine(q_extended)
+    T = tx2_60.fkine(q_extended)
     horiz_reach = np.hypot(T.t[0], T.t[1])
     print(f"\nEnd-effector pose at extended pose: \n{T}")
     print(f"Horizontal reach: {horiz_reach * 1000:.1f} mm "
@@ -105,8 +105,8 @@ if __name__ == "__main__":
  
     env = Swift()
     env.launch(realtime=True)
-    env.add(robot)
-    robot.q = np.array([0, -60 * deg, 60 * deg, 0, 30 * deg, 0])
+    env.add(tx2_60)
+    tx2_60.q = np.array([0, -60 * deg, 60 * deg, 0, 30 * deg, 0])
     env.step()
     env.hold()
  
