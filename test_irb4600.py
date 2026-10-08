@@ -27,7 +27,11 @@ packages.update_package_cache({"abb_irb4600_support": str(PACKAGE_PATH)})
  
 class IRB4600(ERobot):
     def __init__(self):
-        links, name, urdf_string, urdf_filepath = self.URDF_read(str(XACRO_PATH))
+        links, name, urdf_string, urdf_filepath = self.URDF_read(
+            "abb_irb4600_support/urdf/irb4600_60_205.xacro",
+            tld=str(REPO_ROOT),
+        )
+
         super().__init__(
             links,
             name=name,
