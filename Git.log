@@ -1,0 +1,1427 @@
+2026-10-09 08:20:22.957 [info] [main] Log level: Info
+2026-10-09 08:20:22.957 [info] [main] Validating found git in: "/opt/homebrew/bin/git"
+2026-10-09 08:20:22.990 [info] [main] Using git "2.55.0" from "/opt/homebrew/bin/git"
+2026-10-09 08:20:22.990 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-09 08:20:22.991 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-09 08:20:36.615 [info] [main] Log level: Info
+2026-10-09 08:20:36.616 [info] [main] Validating found git in: "/opt/homebrew/bin/git"
+2026-10-09 08:20:36.643 [info] [main] Using git "2.55.0" from "/opt/homebrew/bin/git"
+2026-10-09 08:20:36.643 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-09 08:20:37.124 [info] > git rev-parse --show-toplevel [477ms]
+2026-10-09 08:20:37.199 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [63ms]
+2026-10-09 08:20:37.215 [info] [Model][openRepository] Opened repository (path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 08:20:37.215 [info] [Model][openRepository] Opened repository (real path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 08:20:37.215 [info] [Model][openRepository] Opened repository (kind): repository
+2026-10-09 08:20:37.228 [info] > git config --get commit.template [12ms]
+2026-10-09 08:20:37.228 [info] > git config --get --local core.virtualfilesystem [12ms]
+2026-10-09 08:20:37.229 [warning] [Git][config] git config failed: Failed to execute git
+2026-10-09 08:20:37.230 [info] > git rev-parse --show-toplevel [12ms]
+2026-10-09 08:20:37.359 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [140ms]
+2026-10-09 08:20:37.379 [info] > git rev-parse --show-toplevel [149ms]
+2026-10-09 08:20:37.380 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-09 08:20:37.405 [info] > git status -z -uall [10ms]
+2026-10-09 08:20:37.405 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:20:37.423 [info] > git config --get commit.template [11ms]
+2026-10-09 08:20:37.423 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [14ms]
+2026-10-09 08:20:37.424 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:20:37.434 [info] > git status -z -uall [9ms]
+2026-10-09 08:20:37.434 [info] > git config --get --local branch.trialbranch_versionhistory.vscode-merge-base [10ms]
+2026-10-09 08:20:37.436 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 08:20:37.446 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [11ms]
+2026-10-09 08:20:37.458 [info] > git merge-base refs/heads/trialbranch_versionhistory refs/remotes/origin/trialbranch_versionhistory [10ms]
+2026-10-09 08:20:37.459 [info] > git merge-base refs/heads/trialbranch_versionhistory refs/remotes/origin/trialbranch_versionhistory [10ms]
+2026-10-09 08:20:37.466 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% ae1763aa9b72fc637554a697d7d6ca64f352b08d...refs/remotes/origin/trialbranch_versionhistory -- [7ms]
+2026-10-09 08:20:37.466 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% ae1763aa9b72fc637554a697d7d6ca64f352b08d...refs/remotes/origin/trialbranch_versionhistory -- [7ms]
+2026-10-09 08:20:37.568 [info] > git check-ignore -v -z --stdin [6ms]
+2026-10-09 08:20:37.575 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [5ms]
+2026-10-09 08:20:37.577 [info] > git show --textconv :SceneAttempt_LV_1.py [7ms]
+2026-10-09 08:20:37.583 [info] > git cat-file -s 803809a96ea27a70ffd03e3f9563a5c5b55457de [7ms]
+2026-10-09 08:20:37.597 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental ae1763aa9b72fc637554a697d7d6ca64f352b08d -- SceneAttempt_LV_1.py [8ms]
+2026-10-09 08:20:37.736 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:20:38.080 [info] > git config --get commit.template [6ms]
+2026-10-09 08:20:38.082 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:20:38.107 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [24ms]
+2026-10-09 08:20:38.108 [info] > git status -z -uall [25ms]
+2026-10-09 08:20:38.568 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [53ms]
+2026-10-09 08:20:38.579 [info] > git cat-file -s 803809a96ea27a70ffd03e3f9563a5c5b55457de [10ms]
+2026-10-09 08:20:38.588 [info] > git show --textconv :SceneAttempt_LV_1.py [8ms]
+2026-10-09 08:20:38.877 [info] > git fetch [1663ms]
+2026-10-09 08:20:38.877 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:20:38.885 [info] > git config --get commit.template [7ms]
+2026-10-09 08:20:38.886 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [8ms]
+2026-10-09 08:20:38.895 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:20:38.895 [info] > git status -z -uall [8ms]
+2026-10-09 08:20:46.407 [info] > git config --get commit.template [16ms]
+2026-10-09 08:20:46.409 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [16ms]
+2026-10-09 08:20:46.425 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 08:20:46.427 [info] > git status -z -uall [16ms]
+2026-10-09 08:20:46.499 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [12ms]
+2026-10-09 08:20:46.511 [info] > git cat-file -s 803809a96ea27a70ffd03e3f9563a5c5b55457de [11ms]
+2026-10-09 08:20:46.523 [info] > git show --textconv :SceneAttempt_LV_1.py [10ms]
+2026-10-09 08:20:55.782 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:20:55.790 [info] > git ls-files --stage -- versionhistory [6ms]
+2026-10-09 08:20:55.792 [info] > git show --textconv :versionhistory [9ms]
+2026-10-09 08:20:55.797 [info] > git cat-file -s 1c824065b402eaeacc3a6854534446e536becf31 [6ms]
+2026-10-09 08:21:04.507 [info] > git config --get commit.template [7ms]
+2026-10-09 08:21:04.509 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [8ms]
+2026-10-09 08:21:04.518 [info] > git status -z -uall [8ms]
+2026-10-09 08:21:04.518 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:21:05.661 [info] > git config --get commit.template [14ms]
+2026-10-09 08:21:05.664 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [15ms]
+2026-10-09 08:21:05.679 [info] > git status -z -uall [13ms]
+2026-10-09 08:21:05.679 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:21:33.197 [info] > git config --get commit.template [26ms]
+2026-10-09 08:21:33.205 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [32ms]
+2026-10-09 08:21:33.218 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 08:21:33.220 [info] > git status -z -uall [14ms]
+2026-10-09 08:23:50.795 [info] > git fetch [1631ms]
+2026-10-09 08:23:50.795 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:23:50.802 [info] > git config --get commit.template [6ms]
+2026-10-09 08:23:50.804 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:23:50.813 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:23:50.813 [info] > git status -z -uall [8ms]
+2026-10-09 08:24:32.892 [info] > git config --get commit.template [17ms]
+2026-10-09 08:24:32.898 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [22ms]
+2026-10-09 08:24:32.908 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:24:32.909 [info] > git status -z -uall [10ms]
+2026-10-09 08:24:39.720 [info] > git config --get commit.template [23ms]
+2026-10-09 08:24:39.722 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [25ms]
+2026-10-09 08:24:39.732 [info] > git status -z -uall [9ms]
+2026-10-09 08:24:39.733 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:24:47.458 [info] > git config --get commit.template [10ms]
+2026-10-09 08:24:47.459 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [11ms]
+2026-10-09 08:24:47.468 [info] > git status -z -uall [8ms]
+2026-10-09 08:24:47.469 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:26:06.950 [info] > git check-ignore -v -z --stdin [34ms]
+2026-10-09 08:26:06.975 [info] > git show --textconv :requirements_clean.txt [21ms]
+2026-10-09 08:26:06.977 [info] > git ls-files --stage -- requirements_clean.txt [22ms]
+2026-10-09 08:26:06.994 [info] > git cat-file -s 77eb73917bb08a73ae8d303ae6e006ae0933334c [15ms]
+2026-10-09 08:26:11.101 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental ae1763aa9b72fc637554a697d7d6ca64f352b08d -- requirements_clean.txt [31ms]
+2026-10-09 08:26:52.436 [info] > git ls-files --stage -- requirements_clean.txt [6ms]
+2026-10-09 08:26:52.444 [info] > git cat-file -s 77eb73917bb08a73ae8d303ae6e006ae0933334c [7ms]
+2026-10-09 08:26:52.452 [info] > git show --textconv :requirements_clean.txt [7ms]
+2026-10-09 08:26:52.646 [info] > git fetch [1839ms]
+2026-10-09 08:26:52.646 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:26:52.652 [info] > git config --get commit.template [6ms]
+2026-10-09 08:26:52.654 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:26:52.662 [info] > git status -z -uall [7ms]
+2026-10-09 08:26:52.663 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:29:16.563 [info] > git config --get commit.template [22ms]
+2026-10-09 08:29:16.569 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [28ms]
+2026-10-09 08:29:16.577 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:29:16.579 [info] > git status -z -uall [10ms]
+2026-10-09 08:29:54.501 [info] > git fetch [1842ms]
+2026-10-09 08:29:54.501 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:29:54.508 [info] > git config --get commit.template [6ms]
+2026-10-09 08:29:54.509 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:29:54.518 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:29:54.519 [info] > git status -z -uall [9ms]
+2026-10-09 08:30:15.924 [info] > git ls-files --stage -- requirements_clean.txt [31ms]
+2026-10-09 08:30:15.935 [info] > git cat-file -s 77eb73917bb08a73ae8d303ae6e006ae0933334c [11ms]
+2026-10-09 08:30:15.946 [info] > git show --textconv :requirements_clean.txt [9ms]
+2026-10-09 08:30:24.653 [info] > git config --get commit.template [18ms]
+2026-10-09 08:30:24.657 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [21ms]
+2026-10-09 08:30:24.672 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:30:24.674 [info] > git status -z -uall [15ms]
+2026-10-09 08:33:14.788 [info] > git fetch [2144ms]
+2026-10-09 08:33:14.788 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:33:14.797 [info] > git config --get commit.template [7ms]
+2026-10-09 08:33:14.799 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [8ms]
+2026-10-09 08:33:14.808 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:33:14.809 [info] > git status -z -uall [9ms]
+2026-10-09 08:35:03.083 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [58ms]
+2026-10-09 08:35:27.934 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [31ms]
+2026-10-09 08:35:38.357 [info] > git for-each-ref --format %(refname:short)%00%(upstream:short) refs/heads [19ms]
+2026-10-09 08:35:38.386 [info] > git checkout -q main [25ms]
+2026-10-09 08:35:38.397 [info] > git config --get commit.template [8ms]
+2026-10-09 08:35:38.399 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 08:35:38.409 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:35:38.409 [info] > git status -z -uall [9ms]
+2026-10-09 08:35:38.443 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [30ms]
+2026-10-09 08:35:38.452 [info] > git config --get --local branch.main.vscode-merge-base [8ms]
+2026-10-09 08:35:38.458 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [5ms]
+2026-10-09 08:35:38.466 [info] > git merge-base refs/heads/main refs/remotes/origin/main [7ms]
+2026-10-09 08:35:38.478 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% 94c5c7bf30a5d5e850ef81201bca5abc17e57a1d...refs/remotes/origin/main -- [12ms]
+2026-10-09 08:35:39.634 [info] > git config --get commit.template [12ms]
+2026-10-09 08:35:39.638 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [15ms]
+2026-10-09 08:35:39.651 [info] > git status -z -uall [12ms]
+2026-10-09 08:35:39.651 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 08:35:41.493 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [25ms]
+2026-10-09 08:35:45.717 [info] > git checkout -q main [47ms]
+2026-10-09 08:35:45.729 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-10-09 08:35:45.731 [info] > git config --get commit.template [13ms]
+2026-10-09 08:35:45.740 [info] > git status -z -uall [8ms]
+2026-10-09 08:35:45.740 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:35:46.800 [info] > git config --get commit.template [13ms]
+2026-10-09 08:35:46.804 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [16ms]
+2026-10-09 08:35:46.818 [info] > git status -z -uall [13ms]
+2026-10-09 08:35:46.819 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 08:35:48.073 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [21ms]
+2026-10-09 08:35:50.117 [info] > git for-each-ref --format %(refname:short)%00%(upstream:short) refs/heads [35ms]
+2026-10-09 08:35:50.142 [info] > git checkout -q main [24ms]
+2026-10-09 08:35:50.148 [info] > git config --get commit.template [5ms]
+2026-10-09 08:35:50.150 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 08:35:50.157 [info] > git status -z -uall [7ms]
+2026-10-09 08:35:50.158 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:35:51.838 [info] > git config --get commit.template [13ms]
+2026-10-09 08:35:51.841 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 08:35:51.857 [info] > git status -z -uall [14ms]
+2026-10-09 08:35:51.857 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 08:35:52.389 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [20ms]
+2026-10-09 08:36:16.558 [info] > git fetch [1753ms]
+2026-10-09 08:36:16.559 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:36:16.565 [info] > git config --get commit.template [5ms]
+2026-10-09 08:36:16.568 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 08:36:16.577 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:36:16.577 [info] > git status -z -uall [8ms]
+2026-10-09 08:36:27.863 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [55ms]
+2026-10-09 08:36:36.101 [info] > git checkout -q main [33ms]
+2026-10-09 08:36:36.113 [info] > git config --get commit.template [10ms]
+2026-10-09 08:36:36.115 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [11ms]
+2026-10-09 08:36:36.126 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:36:36.127 [info] > git status -z -uall [11ms]
+2026-10-09 08:36:37.203 [info] > git config --get commit.template [15ms]
+2026-10-09 08:36:37.207 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [17ms]
+2026-10-09 08:36:37.222 [info] > git status -z -uall [13ms]
+2026-10-09 08:36:37.222 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:36:39.445 [info] > git log --oneline --cherry main...main@{upstream} -- [16ms]
+2026-10-09 08:36:48.017 [info] > git pull --tags origin main [8570ms]
+2026-10-09 08:36:48.018 [info] From github.com:Pat0949/The-Jacobian-Hotel
+ * branch            main       -> FETCH_HEAD
+2026-10-09 08:36:48.025 [info] > git config --get commit.template [6ms]
+2026-10-09 08:36:48.026 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 08:36:48.034 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:36:48.035 [info] > git status -z -uall [8ms]
+2026-10-09 08:36:48.066 [info] > git merge-base refs/heads/main refs/remotes/origin/main [28ms]
+2026-10-09 08:36:48.075 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% a5145f599fdc403d1b0f711490f9da5025bb9de5...refs/remotes/origin/main -- [8ms]
+2026-10-09 08:36:48.871 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 08:36:49.227 [info] > git config --get commit.template [14ms]
+2026-10-09 08:36:49.230 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [16ms]
+2026-10-09 08:36:49.244 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:36:49.245 [info] > git status -z -uall [14ms]
+2026-10-09 08:36:50.454 [info] > git check-ignore -v -z --stdin [6ms]
+2026-10-09 08:36:50.462 [info] > git ls-files --stage -- scene.py [5ms]
+2026-10-09 08:36:50.463 [info] > git show --textconv :scene.py [7ms]
+2026-10-09 08:36:50.469 [info] > git cat-file -s 3fa23788b1293a27dde043a55ffb0305970a3a95 [7ms]
+2026-10-09 08:36:51.346 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental a5145f599fdc403d1b0f711490f9da5025bb9de5 -- scene.py [12ms]
+2026-10-09 08:36:53.363 [info] > git check-ignore -v -z --stdin [12ms]
+2026-10-09 08:36:55.657 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 08:36:56.733 [info] > git check-ignore -v -z --stdin [12ms]
+2026-10-09 08:36:57.057 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 08:36:57.587 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:36:58.338 [info] > git check-ignore -v -z --stdin [21ms]
+2026-10-09 08:36:58.855 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 08:36:59.805 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 08:37:18.245 [info] > git check-ignore -v -z --stdin [28ms]
+2026-10-09 08:37:18.805 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 08:37:25.558 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [41ms]
+2026-10-09 08:37:26.727 [info] > git merge-base main origin/main [7ms]
+2026-10-09 08:37:31.091 [info] > git config --get commit.template [7ms]
+2026-10-09 08:37:31.092 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 08:37:31.100 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:37:31.104 [info] > git status -z -uall [11ms]
+2026-10-09 08:37:31.421 [info] > git check-ignore -v -z --stdin [11ms]
+2026-10-09 08:37:32.326 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [20ms]
+2026-10-09 08:37:32.372 [info] > git merge-base main origin/main [41ms]
+2026-10-09 08:37:35.459 [info] > git add -A -- . [25ms]
+2026-10-09 08:37:36.120 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 08:37:50.656 [info] > git -c user.useConfigOnly=true commit --quiet [15196ms]
+2026-10-09 08:37:50.668 [info] > git config --get commit.template [10ms]
+2026-10-09 08:37:50.671 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 08:37:50.708 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [36ms]
+2026-10-09 08:37:50.710 [info] > git status -z -uall [38ms]
+2026-10-09 08:37:50.727 [info] > git merge-base refs/heads/main refs/remotes/origin/main [14ms]
+2026-10-09 08:37:50.737 [info] > git config --get commit.template [6ms]
+2026-10-09 08:37:50.738 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% a5145f599fdc403d1b0f711490f9da5025bb9de5...refs/remotes/origin/main -- [11ms]
+2026-10-09 08:37:50.739 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 08:37:50.741 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [19ms]
+2026-10-09 08:37:50.747 [info] > git status -z -uall [7ms]
+2026-10-09 08:37:50.748 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:37:50.753 [info] > git merge-base main origin/main [8ms]
+2026-10-09 08:37:50.849 [info] > git check-ignore -v -z --stdin [6ms]
+2026-10-09 08:37:50.861 [info] > git ls-files --stage -- scene.py [6ms]
+2026-10-09 08:37:50.862 [info] > git show --textconv :scene.py [8ms]
+2026-10-09 08:37:50.867 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [6ms]
+2026-10-09 08:37:50.879 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental fdae2b54bc26d164fea72667dd1a7e6108b1e54f -- scene.py [7ms]
+2026-10-09 08:37:51.064 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:37:51.817 [info] > git config --get commit.template [15ms]
+2026-10-09 08:37:51.821 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [18ms]
+2026-10-09 08:37:51.836 [info] > git status -z -uall [13ms]
+2026-10-09 08:37:51.836 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:37:51.912 [info] > git ls-files --stage -- scene.py [12ms]
+2026-10-09 08:37:51.924 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [11ms]
+2026-10-09 08:37:51.935 [info] > git show --textconv :scene.py [9ms]
+2026-10-09 08:37:55.682 [info] > git log --oneline --cherry main...main@{upstream} -- [18ms]
+2026-10-09 08:37:56.955 [info] > git ls-files --stage -- scene.py [14ms]
+2026-10-09 08:37:56.968 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [12ms]
+2026-10-09 08:37:56.981 [info] > git show --textconv :scene.py [11ms]
+2026-10-09 08:38:02.814 [info] > git pull --tags origin main [7131ms]
+2026-10-09 08:38:02.814 [info] From github.com:Pat0949/The-Jacobian-Hotel
+ * branch            main       -> FETCH_HEAD
+2026-10-09 08:38:04.078 [info] > git ls-files --stage -- scene.py [13ms]
+2026-10-09 08:38:04.091 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [12ms]
+2026-10-09 08:38:04.103 [info] > git show --textconv :scene.py [10ms]
+2026-10-09 08:38:11.143 [info] > git push origin main:main [8328ms]
+2026-10-09 08:38:11.143 [info] To github.com:Pat0949/The-Jacobian-Hotel.git
+   a5145f5..fdae2b5  main -> main
+2026-10-09 08:38:11.157 [info] > git config --get commit.template [12ms]
+2026-10-09 08:38:11.159 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 08:38:11.172 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 08:38:11.173 [info] > git status -z -uall [13ms]
+2026-10-09 08:38:11.187 [info] > git merge-base refs/heads/main refs/remotes/origin/main [11ms]
+2026-10-09 08:38:11.197 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [9ms]
+2026-10-09 08:38:11.205 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [24ms]
+2026-10-09 08:38:11.217 [info] > git merge-base main origin/main [7ms]
+2026-10-09 08:38:12.259 [info] > git config --get commit.template [21ms]
+2026-10-09 08:38:12.262 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [22ms]
+2026-10-09 08:38:12.276 [info] > git status -z -uall [13ms]
+2026-10-09 08:38:12.276 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:38:12.346 [info] > git ls-files --stage -- scene.py [11ms]
+2026-10-09 08:38:12.357 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [10ms]
+2026-10-09 08:38:12.369 [info] > git show --textconv :scene.py [10ms]
+2026-10-09 08:39:37.908 [info] > git ls-files --stage -- scene.py [8ms]
+2026-10-09 08:39:37.914 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [6ms]
+2026-10-09 08:39:37.923 [info] > git show --textconv :scene.py [7ms]
+2026-10-09 08:39:38.316 [info] > git fetch [1699ms]
+2026-10-09 08:39:38.316 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:39:38.322 [info] > git config --get commit.template [5ms]
+2026-10-09 08:39:38.324 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 08:39:38.332 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:39:38.333 [info] > git status -z -uall [8ms]
+2026-10-09 08:43:12.737 [info] > git ls-files --stage -- scene.py [11ms]
+2026-10-09 08:43:12.748 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [10ms]
+2026-10-09 08:43:12.762 [info] > git show --textconv :scene.py [12ms]
+2026-10-09 08:43:12.999 [info] > git fetch [1522ms]
+2026-10-09 08:43:12.999 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:43:13.006 [info] > git config --get commit.template [6ms]
+2026-10-09 08:43:13.007 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 08:43:13.015 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 08:43:13.017 [info] > git status -z -uall [9ms]
+2026-10-09 08:44:04.145 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [34ms]
+2026-10-09 08:44:06.592 [info] > git checkout -q trialbranch_versionhistory [30ms]
+2026-10-09 08:44:06.604 [info] > git config --get commit.template [10ms]
+2026-10-09 08:44:06.605 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [10ms]
+2026-10-09 08:44:06.616 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:44:06.617 [info] > git status -z -uall [11ms]
+2026-10-09 08:44:06.629 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [8ms]
+2026-10-09 08:44:06.630 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental ae1763aa9b72fc637554a697d7d6ca64f352b08d -- scene.py [10ms]
+2026-10-09 08:44:06.630 [info] fatal: no such path scene.py in ae1763aa9b72fc637554a697d7d6ca64f352b08d
+2026-10-09 08:44:06.637 [info] > git config --get --local branch.trialbranch_versionhistory.vscode-merge-base [7ms]
+2026-10-09 08:44:06.645 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [7ms]
+2026-10-09 08:44:06.653 [info] > git merge-base refs/heads/trialbranch_versionhistory refs/remotes/origin/trialbranch_versionhistory [8ms]
+2026-10-09 08:44:06.659 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% ae1763aa9b72fc637554a697d7d6ca64f352b08d...refs/remotes/origin/trialbranch_versionhistory -- [6ms]
+2026-10-09 08:44:06.670 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [23ms]
+2026-10-09 08:44:06.688 [info] > git merge-base trialbranch_versionhistory origin/trialbranch_versionhistory [6ms]
+2026-10-09 08:44:07.780 [info] > git config --get commit.template [8ms]
+2026-10-09 08:44:07.782 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [9ms]
+2026-10-09 08:44:07.786 [info] > git ls-files --stage -- scene.py [8ms]
+2026-10-09 08:44:07.792 [info] > git status -z -uall [9ms]
+2026-10-09 08:44:07.792 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:44:07.795 [info] > git hash-object -t tree /dev/null [8ms]
+2026-10-09 08:44:07.796 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/scene.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fscene.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 08:44:13.332 [info] > git check-ignore -v -z --stdin [8ms]
+2026-10-09 08:44:13.366 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [30ms]
+2026-10-09 08:44:13.375 [info] > git show --textconv :SceneAttempt_LV_1.py [40ms]
+2026-10-09 08:44:13.379 [info] > git cat-file -s 803809a96ea27a70ffd03e3f9563a5c5b55457de [13ms]
+2026-10-09 08:44:57.899 [info] > git check-ignore -v -z --stdin [26ms]
+2026-10-09 08:44:59.946 [info] > git config --get commit.template [10ms]
+2026-10-09 08:44:59.953 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [16ms]
+2026-10-09 08:44:59.963 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:44:59.964 [info] > git status -z -uall [10ms]
+2026-10-09 08:45:00.275 [info] > git check-ignore -v -z --stdin [7ms]
+2026-10-09 08:45:05.814 [info] > git check-ignore -v -z --stdin [12ms]
+2026-10-09 08:47:40.739 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [6ms]
+2026-10-09 08:47:40.746 [info] > git cat-file -s 803809a96ea27a70ffd03e3f9563a5c5b55457de [6ms]
+2026-10-09 08:47:40.754 [info] > git show --textconv :SceneAttempt_LV_1.py [6ms]
+2026-10-09 08:47:41.282 [info] > git fetch [1865ms]
+2026-10-09 08:47:41.282 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:47:41.288 [info] > git config --get commit.template [5ms]
+2026-10-09 08:47:41.290 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [7ms]
+2026-10-09 08:47:41.300 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:47:41.301 [info] > git status -z -uall [10ms]
+2026-10-09 08:47:41.436 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 08:47:44.099 [info] > git config --get commit.template [15ms]
+2026-10-09 08:47:44.102 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [16ms]
+2026-10-09 08:47:44.116 [info] > git status -z -uall [13ms]
+2026-10-09 08:47:44.117 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 08:48:12.805 [info] > git config --get commit.template [20ms]
+2026-10-09 08:48:12.809 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [21ms]
+2026-10-09 08:48:12.818 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:48:12.819 [info] > git status -z -uall [10ms]
+2026-10-09 08:48:13.135 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [63ms]
+2026-10-09 08:48:13.153 [info] > git merge-base trialbranch_versionhistory origin/trialbranch_versionhistory [7ms]
+2026-10-09 08:48:16.471 [info] > git add -A -- . [18ms]
+2026-10-09 08:48:44.772 [info] > git -c user.useConfigOnly=true commit --quiet [28300ms]
+2026-10-09 08:48:44.791 [info] > git config --get commit.template [17ms]
+2026-10-09 08:48:44.822 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [48ms]
+2026-10-09 08:48:44.838 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [15ms]
+2026-10-09 08:48:44.839 [info] > git status -z -uall [17ms]
+2026-10-09 08:48:44.851 [info] > git merge-base refs/heads/trialbranch_versionhistory refs/remotes/origin/trialbranch_versionhistory [10ms]
+2026-10-09 08:48:44.862 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% ae1763aa9b72fc637554a697d7d6ca64f352b08d...refs/remotes/origin/trialbranch_versionhistory -- [10ms]
+2026-10-09 08:48:44.864 [info] > git config --get commit.template [7ms]
+2026-10-09 08:48:44.867 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [9ms]
+2026-10-09 08:48:44.875 [info] > git status -z -uall [8ms]
+2026-10-09 08:48:44.876 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:48:44.878 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [25ms]
+2026-10-09 08:48:44.889 [info] > git merge-base trialbranch_versionhistory origin/trialbranch_versionhistory [6ms]
+2026-10-09 08:48:44.963 [info] > git check-ignore -v -z --stdin [8ms]
+2026-10-09 08:48:44.970 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [5ms]
+2026-10-09 08:48:44.971 [info] > git show --textconv :SceneAttempt_LV_1.py [7ms]
+2026-10-09 08:48:44.979 [info] > git cat-file -s e816fe8c4809d8cb4bb09c1a83a496f6cc4f535b [8ms]
+2026-10-09 08:48:44.995 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental d9dc9b4736ced00ab4b9b6b5fea233b7ec563064 -- SceneAttempt_LV_1.py [8ms]
+2026-10-09 08:48:45.189 [info] > git check-ignore -v -z --stdin [6ms]
+2026-10-09 08:48:45.926 [info] > git config --get commit.template [10ms]
+2026-10-09 08:48:45.929 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [12ms]
+2026-10-09 08:48:45.941 [info] > git status -z -uall [11ms]
+2026-10-09 08:48:45.941 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 08:48:46.025 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [9ms]
+2026-10-09 08:48:46.035 [info] > git cat-file -s e816fe8c4809d8cb4bb09c1a83a496f6cc4f535b [9ms]
+2026-10-09 08:48:46.046 [info] > git show --textconv :SceneAttempt_LV_1.py [9ms]
+2026-10-09 08:48:48.299 [info] > git log --oneline --cherry trialbranch_versionhistory...trialbranch_versionhistory@{upstream} -- [15ms]
+2026-10-09 08:48:49.531 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [14ms]
+2026-10-09 08:48:49.545 [info] > git cat-file -s e816fe8c4809d8cb4bb09c1a83a496f6cc4f535b [13ms]
+2026-10-09 08:48:49.557 [info] > git show --textconv :SceneAttempt_LV_1.py [11ms]
+2026-10-09 08:48:55.053 [info] > git pull --tags origin trialbranch_versionhistory [6752ms]
+2026-10-09 08:48:55.053 [info] From github.com:Pat0949/The-Jacobian-Hotel
+ * branch            trialbranch_versionhistory -> FETCH_HEAD
+2026-10-09 08:48:56.312 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [13ms]
+2026-10-09 08:48:56.325 [info] > git cat-file -s e816fe8c4809d8cb4bb09c1a83a496f6cc4f535b [12ms]
+2026-10-09 08:48:56.337 [info] > git show --textconv :SceneAttempt_LV_1.py [10ms]
+2026-10-09 08:49:06.465 [info] > git push origin trialbranch_versionhistory:trialbranch_versionhistory [11411ms]
+2026-10-09 08:49:06.465 [info] To github.com:Pat0949/The-Jacobian-Hotel.git
+   ae1763a..d9dc9b4  trialbranch_versionhistory -> trialbranch_versionhistory
+2026-10-09 08:49:06.480 [info] > git config --get commit.template [13ms]
+2026-10-09 08:49:06.483 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [15ms]
+2026-10-09 08:49:06.498 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 08:49:06.498 [info] > git status -z -uall [14ms]
+2026-10-09 08:49:06.512 [info] > git merge-base refs/heads/trialbranch_versionhistory refs/remotes/origin/trialbranch_versionhistory [10ms]
+2026-10-09 08:49:06.522 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% d9dc9b4736ced00ab4b9b6b5fea233b7ec563064...refs/remotes/origin/trialbranch_versionhistory -- [9ms]
+2026-10-09 08:49:06.532 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [26ms]
+2026-10-09 08:49:06.544 [info] > git merge-base trialbranch_versionhistory origin/trialbranch_versionhistory [7ms]
+2026-10-09 08:49:07.575 [info] > git config --get commit.template [10ms]
+2026-10-09 08:49:07.577 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/trialbranch_versionhistory refs/remotes/trialbranch_versionhistory [11ms]
+2026-10-09 08:49:07.589 [info] > git status -z -uall [11ms]
+2026-10-09 08:49:07.589 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 08:49:07.675 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [8ms]
+2026-10-09 08:49:07.684 [info] > git cat-file -s e816fe8c4809d8cb4bb09c1a83a496f6cc4f535b [9ms]
+2026-10-09 08:49:07.694 [info] > git show --textconv :SceneAttempt_LV_1.py [8ms]
+2026-10-09 08:49:09.467 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [15ms]
+2026-10-09 08:49:13.430 [info] > git checkout -q main [24ms]
+2026-10-09 08:49:13.445 [info] > git config --get commit.template [13ms]
+2026-10-09 08:49:13.447 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 08:49:13.458 [info] > git status -z -uall [10ms]
+2026-10-09 08:49:13.458 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:49:13.499 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental fdae2b54bc26d164fea72667dd1a7e6108b1e54f -- SceneAttempt_LV_1.py [38ms]
+2026-10-09 08:49:13.499 [info] fatal: no such path SceneAttempt_LV_1.py in fdae2b54bc26d164fea72667dd1a7e6108b1e54f
+2026-10-09 08:49:13.501 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [39ms]
+2026-10-09 08:49:13.514 [info] > git config --get --local branch.main.vscode-merge-base [11ms]
+2026-10-09 08:49:13.521 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [6ms]
+2026-10-09 08:49:13.529 [info] > git merge-base refs/heads/main refs/remotes/origin/main [7ms]
+2026-10-09 08:49:13.536 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [12ms]
+2026-10-09 08:49:13.539 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [9ms]
+2026-10-09 08:49:13.546 [info] > git merge-base main origin/main [6ms]
+2026-10-09 08:49:14.620 [info] > git config --get commit.template [7ms]
+2026-10-09 08:49:14.620 [info] > git ls-files --stage -- SceneAttempt_LV_1.py [6ms]
+2026-10-09 08:49:14.621 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/SceneAttempt_LV_1.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2FSceneAttempt_LV_1.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 08:49:14.622 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 08:49:14.631 [info] > git status -z -uall [8ms]
+2026-10-09 08:49:14.632 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 08:49:19.972 [info] > git check-ignore -v -z --stdin [12ms]
+2026-10-09 08:49:19.981 [info] > git ls-files --stage -- scene.py [7ms]
+2026-10-09 08:49:19.982 [info] > git show --textconv :scene.py [8ms]
+2026-10-09 08:49:19.988 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [7ms]
+2026-10-09 08:53:38.680 [info] > git ls-files --stage -- scene.py [7ms]
+2026-10-09 08:53:38.687 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [6ms]
+2026-10-09 08:53:38.696 [info] > git show --textconv :scene.py [7ms]
+2026-10-09 08:53:38.911 [info] > git fetch [1512ms]
+2026-10-09 08:53:38.911 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:53:38.918 [info] > git config --get commit.template [6ms]
+2026-10-09 08:53:38.919 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 08:53:38.927 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 08:53:38.928 [info] > git status -z -uall [8ms]
+2026-10-09 08:54:16.681 [info] [main] Log level: Info
+2026-10-09 08:54:16.685 [info] [main] Validating found git in: "/opt/homebrew/bin/git"
+2026-10-09 08:54:16.718 [info] [main] Using git "2.55.0" from "/opt/homebrew/bin/git"
+2026-10-09 08:54:16.718 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-09 08:54:16.728 [info] > git rev-parse --show-toplevel [8ms]
+2026-10-09 08:54:16.728 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:16.734 [info] > git rev-parse --show-toplevel [5ms]
+2026-10-09 08:54:16.734 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.016 [info] > git rev-parse --show-toplevel [281ms]
+2026-10-09 08:54:17.016 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.060 [info] > git rev-parse --show-toplevel [17ms]
+2026-10-09 08:54:17.060 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.078 [info] > git rev-parse --show-toplevel [17ms]
+2026-10-09 08:54:17.078 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.078 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-09 08:54:17.088 [info] > git rev-parse --show-toplevel [5ms]
+2026-10-09 08:54:17.088 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.400 [info] > git rev-parse --show-toplevel [9ms]
+2026-10-09 08:54:17.400 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.625 [info] > git rev-parse --show-toplevel [8ms]
+2026-10-09 08:54:17.625 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.651 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 08:54:17.651 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:17.969 [info] > git rev-parse --show-toplevel [9ms]
+2026-10-09 08:54:17.969 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:18.047 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 08:54:18.047 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:20.371 [info] > git rev-parse --show-toplevel [6ms]
+2026-10-09 08:54:20.371 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:20.946 [info] > git rev-parse --show-toplevel [67ms]
+2026-10-09 08:54:20.946 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:21.140 [info] > git rev-parse --show-toplevel [13ms]
+2026-10-09 08:54:21.140 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:54:51.145 [info] > git rev-parse --show-toplevel [43ms]
+2026-10-09 08:54:51.146 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:55:51.901 [info] > git rev-parse --show-toplevel [24ms]
+2026-10-09 08:55:51.901 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 08:56:21.026 [info] [main] Log level: Info
+2026-10-09 08:56:21.026 [info] [main] Validating found git in: "/opt/homebrew/bin/git"
+2026-10-09 08:56:21.071 [info] [main] Using git "2.55.0" from "/opt/homebrew/bin/git"
+2026-10-09 08:56:21.071 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-09 08:56:21.100 [info] > git rev-parse --show-toplevel [26ms]
+2026-10-09 08:56:21.132 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [31ms]
+2026-10-09 08:56:21.177 [info] [Model][openRepository] Opened repository (path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 08:56:21.177 [info] [Model][openRepository] Opened repository (real path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 08:56:21.177 [info] [Model][openRepository] Opened repository (kind): repository
+2026-10-09 08:56:21.191 [info] > git config --get --local core.virtualfilesystem [12ms]
+2026-10-09 08:56:21.191 [warning] [Git][config] git config failed: Failed to execute git
+2026-10-09 08:56:21.195 [info] > git config --get commit.template [14ms]
+2026-10-09 08:56:21.199 [info] > git rev-parse --show-toplevel [10ms]
+2026-10-09 08:56:21.202 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [12ms]
+2026-10-09 08:56:21.209 [info] > git rev-parse --show-toplevel [9ms]
+2026-10-09 08:56:21.210 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-09 08:56:21.227 [info] > git status -z -uall [23ms]
+2026-10-09 08:56:21.231 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [26ms]
+2026-10-09 08:56:21.708 [info] > git config --get commit.template [39ms]
+2026-10-09 08:56:21.708 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [463ms]
+2026-10-09 08:56:21.797 [info] > git config --get --local branch.main.vscode-merge-base [88ms]
+2026-10-09 08:56:21.977 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [203ms]
+2026-10-09 08:56:21.981 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [183ms]
+2026-10-09 08:56:22.142 [info] > git merge-base refs/heads/main refs/remotes/origin/main [160ms]
+2026-10-09 08:56:22.162 [info] > git status -z -uall [15ms]
+2026-10-09 08:56:22.163 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [20ms]
+2026-10-09 08:56:22.166 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [18ms]
+2026-10-09 08:56:22.856 [info] > git fetch [1679ms]
+2026-10-09 08:56:22.856 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:56:22.865 [info] > git config --get commit.template [18ms]
+2026-10-09 08:56:22.872 [info] > git config --get commit.template [7ms]
+2026-10-09 08:56:22.878 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 08:56:22.879 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 08:56:22.887 [info] > git status -z -uall [7ms]
+2026-10-09 08:56:22.888 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:56:26.394 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 08:56:27.771 [info] > git check-ignore -v -z --stdin [11ms]
+2026-10-09 08:56:27.785 [info] > git ls-files --stage -- scene.py [11ms]
+2026-10-09 08:56:27.786 [info] > git show --textconv :scene.py [13ms]
+2026-10-09 08:56:27.798 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [12ms]
+2026-10-09 08:56:27.826 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental fdae2b54bc26d164fea72667dd1a7e6108b1e54f -- scene.py [21ms]
+2026-10-09 08:56:33.610 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 08:57:20.696 [info] > git check-ignore -v -z --stdin [18ms]
+2026-10-09 08:57:21.911 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:57:22.514 [info] > git check-ignore -v -z --stdin [13ms]
+2026-10-09 08:57:22.989 [info] > git check-ignore -v -z --stdin [11ms]
+2026-10-09 08:57:24.645 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 08:57:26.162 [info] > git check-ignore -v -z --stdin [12ms]
+2026-10-09 08:57:28.492 [info] > git check-ignore -v -z --stdin [13ms]
+2026-10-09 08:57:32.370 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 08:57:34.332 [info] > git check-ignore -v -z --stdin [7ms]
+2026-10-09 08:57:35.908 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 08:57:38.102 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 08:57:38.852 [info] > git check-ignore -v -z --stdin [19ms]
+2026-10-09 08:57:39.090 [info] > git check-ignore -v -z --stdin [7ms]
+2026-10-09 08:57:39.781 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 08:57:40.247 [info] > git check-ignore -v -z --stdin [8ms]
+2026-10-09 08:57:40.645 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:57:41.327 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 08:57:45.741 [info] > git config --get commit.template [7ms]
+2026-10-09 08:57:45.748 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 08:57:45.758 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:57:45.760 [info] > git status -z -uall [11ms]
+2026-10-09 08:57:46.071 [info] > git check-ignore -v -z --stdin [6ms]
+2026-10-09 08:57:54.891 [info] > git config --get commit.template [27ms]
+2026-10-09 08:57:54.898 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [32ms]
+2026-10-09 08:57:54.911 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 08:57:54.914 [info] > git status -z -uall [15ms]
+2026-10-09 08:57:59.988 [info] > git config --get commit.template [22ms]
+2026-10-09 08:57:59.993 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [26ms]
+2026-10-09 08:58:00.010 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [15ms]
+2026-10-09 08:58:00.010 [info] > git status -z -uall [16ms]
+2026-10-09 08:58:52.785 [info] > git check-ignore -v -z --stdin [23ms]
+2026-10-09 08:58:52.794 [info] > git ls-files --stage -- build_irb4600.py [6ms]
+2026-10-09 08:58:52.796 [info] > git show --textconv :build_irb4600.py [8ms]
+2026-10-09 08:58:52.801 [info] > git hash-object -t tree /dev/null [6ms]
+2026-10-09 08:58:52.802 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/build_irb4600.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fbuild_irb4600.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 08:58:52.802 [info] > git hash-object -t tree /dev/null [6ms]
+2026-10-09 08:58:52.802 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/build_irb4600.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fbuild_irb4600.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 08:58:53.059 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 08:58:53.775 [info] > git config --get commit.template [16ms]
+2026-10-09 08:58:53.780 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [19ms]
+2026-10-09 08:58:53.795 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:58:53.796 [info] > git status -z -uall [14ms]
+2026-10-09 08:59:14.455 [info] > git config --get commit.template [19ms]
+2026-10-09 08:59:14.462 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [24ms]
+2026-10-09 08:59:14.471 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 08:59:14.474 [info] > git status -z -uall [12ms]
+2026-10-09 08:59:24.539 [info] > git fetch [1650ms]
+2026-10-09 08:59:24.539 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 08:59:24.545 [info] > git config --get commit.template [5ms]
+2026-10-09 08:59:24.547 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 08:59:24.555 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 08:59:24.555 [info] > git status -z -uall [7ms]
+2026-10-09 08:59:42.134 [info] > git config --get commit.template [27ms]
+2026-10-09 08:59:42.140 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [31ms]
+2026-10-09 08:59:42.154 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 08:59:42.156 [info] > git status -z -uall [14ms]
+2026-10-09 09:06:26.203 [info] > git fetch [1666ms]
+2026-10-09 09:06:26.203 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:06:26.210 [info] > git config --get commit.template [6ms]
+2026-10-09 09:06:26.211 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 09:06:26.220 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:06:26.220 [info] > git status -z -uall [8ms]
+2026-10-09 09:11:02.470 [info] > git fetch [1703ms]
+2026-10-09 09:11:02.470 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:11:02.476 [info] > git config --get commit.template [5ms]
+2026-10-09 09:11:02.478 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:11:02.486 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:11:02.487 [info] > git status -z -uall [8ms]
+2026-10-09 09:14:03.937 [info] > git fetch [1449ms]
+2026-10-09 09:14:03.937 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:14:03.943 [info] > git config --get commit.template [5ms]
+2026-10-09 09:14:03.945 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:14:03.954 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:14:03.954 [info] > git status -z -uall [8ms]
+2026-10-09 09:14:08.121 [info] > git config --get commit.template [7ms]
+2026-10-09 09:14:08.123 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 09:14:08.131 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:14:08.132 [info] > git status -z -uall [8ms]
+2026-10-09 09:18:34.261 [info] > git fetch [1690ms]
+2026-10-09 09:18:34.261 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:18:34.268 [info] > git config --get commit.template [6ms]
+2026-10-09 09:18:34.271 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 09:18:34.279 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:18:34.281 [info] > git status -z -uall [10ms]
+2026-10-09 09:18:41.432 [info] > git config --get commit.template [8ms]
+2026-10-09 09:18:41.434 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-10-09 09:18:41.442 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:18:41.443 [info] > git status -z -uall [8ms]
+2026-10-09 09:19:34.576 [info] > git config --get commit.template [25ms]
+2026-10-09 09:19:34.580 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [28ms]
+2026-10-09 09:19:34.592 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 09:19:34.594 [info] > git status -z -uall [13ms]
+2026-10-09 09:19:44.347 [info] [main] Log level: Info
+2026-10-09 09:19:44.347 [info] [main] Validating found git in: "/opt/homebrew/bin/git"
+2026-10-09 09:19:44.601 [info] [main] Using git "2.55.0" from "/opt/homebrew/bin/git"
+2026-10-09 09:19:44.601 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-09 09:19:44.698 [info] > git rev-parse --show-toplevel [84ms]
+2026-10-09 09:19:44.698 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:44.710 [info] > git rev-parse --show-toplevel [10ms]
+2026-10-09 09:19:44.710 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:44.970 [info] > git rev-parse --show-toplevel [253ms]
+2026-10-09 09:19:44.970 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:45.041 [info] > git rev-parse --show-toplevel [67ms]
+2026-10-09 09:19:45.041 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:45.112 [info] > git rev-parse --show-toplevel [34ms]
+2026-10-09 09:19:45.218 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [102ms]
+2026-10-09 09:19:45.241 [info] [Model][openRepository] Opened repository (path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 09:19:45.241 [info] [Model][openRepository] Opened repository (real path): /Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel
+2026-10-09 09:19:45.241 [info] [Model][openRepository] Opened repository (kind): repository
+2026-10-09 09:19:45.272 [info] > git config --get commit.template [24ms]
+2026-10-09 09:19:45.272 [info] > git rev-parse --show-toplevel [22ms]
+2026-10-09 09:19:45.272 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:45.278 [info] > git config --get --local core.virtualfilesystem [35ms]
+2026-10-09 09:19:45.278 [warning] [Git][config] git config failed: Failed to execute git
+2026-10-09 09:19:45.285 [info] > git rev-parse --show-toplevel [11ms]
+2026-10-09 09:19:45.285 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [23ms]
+2026-10-09 09:19:45.337 [info] > git status -z -uall [42ms]
+2026-10-09 09:19:45.338 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [51ms]
+2026-10-09 09:19:45.693 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [397ms]
+2026-10-09 09:19:45.733 [info] > git config --get commit.template [8ms]
+2026-10-09 09:19:45.734 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [37ms]
+2026-10-09 09:19:45.927 [info] > git config --get --local branch.main.vscode-merge-base [193ms]
+2026-10-09 09:19:45.931 [info] [Model][openRepository] Opened repository (path): /Users/lieeharm/Industrial_Robotics/abb
+2026-10-09 09:19:45.931 [info] [Model][openRepository] Opened repository (real path): /Users/lieeharm/Industrial_Robotics/abb
+2026-10-09 09:19:45.931 [info] [Model][openRepository] Opened repository (kind): repository
+2026-10-09 09:19:45.933 [info] [Model][doInitialScan] Initial repository scan completed - repositories (2), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-09 09:19:45.937 [info] > git check-ignore -v -z --stdin [52ms]
+2026-10-09 09:19:45.946 [info] > git config --get --local core.virtualfilesystem [13ms]
+2026-10-09 09:19:45.946 [warning] [Git][config] git config failed: Failed to execute git
+2026-10-09 09:19:45.948 [info] > git config --get commit.template [11ms]
+2026-10-09 09:19:45.948 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [31ms]
+2026-10-09 09:19:45.949 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/main refs/remotes/origin/main [21ms]
+2026-10-09 09:19:45.952 [info] > git rev-parse --show-toplevel [15ms]
+2026-10-09 09:19:45.952 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:45.981 [info] > git merge-base refs/heads/main refs/remotes/origin/main [31ms]
+2026-10-09 09:19:45.985 [info] > git rev-parse --show-toplevel [31ms]
+2026-10-09 09:19:45.986 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:45.989 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [40ms]
+2026-10-09 09:19:45.993 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [35ms]
+2026-10-09 09:19:46.000 [info] > git status -z -uall [43ms]
+2026-10-09 09:19:46.273 [info] > git rev-parse --show-toplevel [285ms]
+2026-10-09 09:19:46.273 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:46.273 [info] > git status -z -uall [276ms]
+2026-10-09 09:19:46.273 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [290ms]
+2026-10-09 09:19:46.367 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [369ms]
+2026-10-09 09:19:46.379 [info] > git merge-base refs/heads/main refs/remotes/origin/main [376ms]
+2026-10-09 09:19:46.412 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [32ms]
+2026-10-09 09:19:46.423 [info] > git config --get commit.template [16ms]
+2026-10-09 09:19:46.423 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [53ms]
+2026-10-09 09:19:46.424 [info] > git rev-parse --show-toplevel [59ms]
+2026-10-09 09:19:46.424 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:46.433 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 09:19:46.433 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:46.433 [info] > git config --get --local branch.noetic-devel.vscode-merge-base [9ms]
+2026-10-09 09:19:46.442 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/origin/noetic-devel refs/remotes/origin/noetic-devel [8ms]
+2026-10-09 09:19:46.444 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [12ms]
+2026-10-09 09:19:46.456 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 09:19:46.456 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 09:19:46.457 [info] > git merge-base refs/heads/noetic-devel refs/remotes/origin/noetic-devel [14ms]
+2026-10-09 09:19:46.460 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [14ms]
+2026-10-09 09:19:46.464 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% e6deaeb1a0c35165f026581a0d59ab3d927b8ace...refs/remotes/origin/noetic-devel -- [7ms]
+2026-10-09 09:19:46.465 [info] > git status -z -uall [20ms]
+2026-10-09 09:19:46.628 [info] > git fetch [697ms]
+2026-10-09 09:19:46.635 [info] > git config --get commit.template [6ms]
+2026-10-09 09:19:46.638 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [9ms]
+2026-10-09 09:19:46.647 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:19:46.654 [info] > git status -z -uall [16ms]
+2026-10-09 09:19:46.849 [info] > git fetch [1608ms]
+2026-10-09 09:19:46.849 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:19:46.855 [info] > git config --get commit.template [5ms]
+2026-10-09 09:19:46.857 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 09:19:46.994 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [136ms] (cancelled)
+2026-10-09 09:19:47.004 [info] > git status -z -uall [147ms] (cancelled)
+2026-10-09 09:19:47.042 [info] > git config --get commit.template [43ms]
+2026-10-09 09:19:47.042 [info] > git config --get commit.template [44ms]
+2026-10-09 09:19:47.076 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [12ms]
+2026-10-09 09:19:47.077 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 09:19:47.086 [info] > git status -z -uall [8ms]
+2026-10-09 09:19:47.088 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 09:19:47.099 [info] > git status -z -uall [22ms]
+2026-10-09 09:19:47.101 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [21ms]
+2026-10-09 09:19:47.404 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 09:19:47.404 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:47.404 [info] > git rev-parse --show-toplevel [8ms]
+2026-10-09 09:19:47.404 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:19:47.723 [info] > git config --get commit.template [12ms]
+2026-10-09 09:19:47.730 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [18ms]
+2026-10-09 09:19:47.869 [info] > git status -z -uall [136ms]
+2026-10-09 09:19:47.871 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [138ms]
+2026-10-09 09:19:50.932 [info] > git rev-parse --show-toplevel [9ms]
+2026-10-09 09:19:50.932 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:21:03.737 [info] > git check-ignore -v -z --stdin [48ms]
+2026-10-09 09:21:06.182 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 09:21:07.765 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 09:22:47.307 [info] > git fetch [654ms]
+2026-10-09 09:22:47.316 [info] > git config --get commit.template [8ms]
+2026-10-09 09:22:47.318 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [9ms]
+2026-10-09 09:22:47.328 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 09:22:47.350 [info] > git status -z -uall [31ms]
+2026-10-09 09:22:48.474 [info] > git config --get commit.template [9ms]
+2026-10-09 09:22:48.476 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [10ms]
+2026-10-09 09:22:48.487 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 09:22:48.496 [info] > git status -z -uall [18ms]
+2026-10-09 09:22:48.641 [info] > git fetch [1647ms]
+2026-10-09 09:22:48.641 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:22:48.647 [info] > git config --get commit.template [5ms]
+2026-10-09 09:22:48.650 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 09:22:48.658 [info] > git status -z -uall [8ms]
+2026-10-09 09:22:48.658 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:22:49.341 [info] > git rev-parse --show-toplevel [10ms]
+2026-10-09 09:22:49.341 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:22:50.155 [info] > git config --get commit.template [6ms]
+2026-10-09 09:22:50.155 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 09:22:50.163 [info] > git status -z -uall [7ms]
+2026-10-09 09:22:50.163 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 09:23:02.856 [info] > git rev-parse --show-toplevel [16ms]
+2026-10-09 09:23:02.856 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:24:06.931 [info] > git rev-parse --show-toplevel [77ms]
+2026-10-09 09:24:06.932 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:24:58.774 [info] > git rev-parse --show-toplevel [18ms]
+2026-10-09 09:24:58.774 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:25:03.704 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 09:25:03.713 [info] > git ls-files --stage -- irb4600/visual/link_1.dae [6ms]
+2026-10-09 09:25:03.721 [info] > git cat-file -s bdd5757e52314b112e5f9dff1541aedaa8551725 [7ms]
+2026-10-09 09:25:03.722 [info] > git show --textconv :irb4600/visual/link_1.dae [16ms]
+2026-10-09 09:25:04.096 [info] > git check-ignore -v -z --stdin [7ms]
+2026-10-09 09:25:04.105 [info] > git ls-files --stage -- irb4600/visual/base_link.dae [7ms]
+2026-10-09 09:25:04.108 [info] > git show --textconv :irb4600/visual/base_link.dae [10ms]
+2026-10-09 09:25:04.113 [info] > git cat-file -s 523cacc14938c3db54d7b9a0a3c1732e01e9e01c [7ms]
+2026-10-09 09:25:15.957 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 09:25:16.732 [info] > git check-ignore -v -z --stdin [17ms]
+2026-10-09 09:25:19.878 [info] > git check-ignore -v -z --stdin [17ms]
+2026-10-09 09:25:21.623 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 09:25:23.337 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 09:27:49.328 [info] > git config --get commit.template [30ms]
+2026-10-09 09:27:49.338 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [37ms]
+2026-10-09 09:27:49.353 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [14ms]
+2026-10-09 09:27:49.372 [info] > git status -z -uall [33ms]
+2026-10-09 09:27:49.997 [info] > git fetch [703ms]
+2026-10-09 09:27:50.003 [info] > git config --get commit.template [6ms]
+2026-10-09 09:27:50.004 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:27:50.012 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:27:50.019 [info] > git status -z -uall [14ms]
+2026-10-09 09:27:51.020 [info] > git fetch [1724ms]
+2026-10-09 09:27:51.020 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:27:51.026 [info] > git config --get commit.template [6ms]
+2026-10-09 09:27:51.028 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:27:51.035 [info] > git status -z -uall [7ms]
+2026-10-09 09:27:51.035 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 09:27:54.471 [info] > git config --get commit.template [18ms]
+2026-10-09 09:27:54.475 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [17ms]
+2026-10-09 09:27:54.486 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 09:27:54.492 [info] > git status -z -uall [16ms]
+2026-10-09 09:33:01.022 [info] > git config --get commit.template [78ms]
+2026-10-09 09:33:01.030 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [67ms]
+2026-10-09 09:33:01.041 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 09:33:01.058 [info] > git status -z -uall [28ms]
+2026-10-09 09:33:01.649 [info] > git fetch [710ms]
+2026-10-09 09:33:01.655 [info] > git config --get commit.template [5ms]
+2026-10-09 09:33:01.657 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:33:01.665 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:33:01.670 [info] > git status -z -uall [13ms]
+2026-10-09 09:33:02.678 [info] > git fetch [1737ms]
+2026-10-09 09:33:02.678 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:33:02.684 [info] > git config --get commit.template [5ms]
+2026-10-09 09:33:02.686 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:33:02.693 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 09:33:02.694 [info] > git status -z -uall [8ms]
+2026-10-09 09:33:06.080 [info] > git config --get commit.template [14ms]
+2026-10-09 09:33:06.084 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [16ms]
+2026-10-09 09:33:06.099 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 09:33:06.108 [info] > git status -z -uall [23ms]
+2026-10-09 09:33:42.351 [info] > git rev-parse --show-toplevel [27ms]
+2026-10-09 09:33:42.352 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:33:54.767 [info] > git rev-parse --show-toplevel [40ms]
+2026-10-09 09:33:54.767 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:34:36.071 [info] > git rev-parse --show-toplevel [22ms]
+2026-10-09 09:34:36.071 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:35:02.821 [info] > git rev-parse --show-toplevel [23ms]
+2026-10-09 09:35:02.821 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:36:02.680 [info] > git fetch [1006ms]
+2026-10-09 09:36:02.689 [info] > git config --get commit.template [7ms]
+2026-10-09 09:36:02.690 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [8ms]
+2026-10-09 09:36:02.700 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:36:02.707 [info] > git status -z -uall [15ms]
+2026-10-09 09:36:03.768 [info] > git config --get commit.template [11ms]
+2026-10-09 09:36:03.770 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [13ms]
+2026-10-09 09:36:03.783 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 09:36:03.790 [info] > git status -z -uall [19ms]
+2026-10-09 09:36:04.516 [info] > git fetch [1825ms]
+2026-10-09 09:36:04.516 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:36:04.522 [info] > git config --get commit.template [5ms]
+2026-10-09 09:36:04.524 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:36:04.531 [info] > git status -z -uall [7ms]
+2026-10-09 09:36:04.532 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:38:32.128 [info] > git rev-parse --show-toplevel [29ms]
+2026-10-09 09:38:32.128 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:38:40.970 [info] > git rev-parse --show-toplevel [14ms]
+2026-10-09 09:38:40.971 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:39:19.686 [info] > git fetch [616ms]
+2026-10-09 09:39:19.694 [info] > git config --get commit.template [6ms]
+2026-10-09 09:39:19.695 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [7ms]
+2026-10-09 09:39:19.704 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:39:19.732 [info] > git status -z -uall [36ms]
+2026-10-09 09:39:20.801 [info] > git config --get commit.template [36ms]
+2026-10-09 09:39:20.811 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [37ms]
+2026-10-09 09:39:20.821 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:39:20.830 [info] > git status -z -uall [17ms]
+2026-10-09 09:39:20.871 [info] > git fetch [1799ms]
+2026-10-09 09:39:20.871 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:39:20.877 [info] > git config --get commit.template [5ms]
+2026-10-09 09:39:20.879 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:39:20.887 [info] > git status -z -uall [8ms]
+2026-10-09 09:39:20.887 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:42:18.548 [info] > git rev-parse --show-toplevel [68ms]
+2026-10-09 09:42:18.548 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:42:20.251 [info] > git fetch [519ms]
+2026-10-09 09:42:20.258 [info] > git config --get commit.template [6ms]
+2026-10-09 09:42:20.259 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [7ms]
+2026-10-09 09:42:20.267 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:42:20.290 [info] > git status -z -uall [31ms]
+2026-10-09 09:42:20.630 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 09:42:20.630 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:42:21.413 [info] > git config --get commit.template [6ms]
+2026-10-09 09:42:21.414 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:42:21.423 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:42:21.428 [info] > git status -z -uall [13ms]
+2026-10-09 09:42:22.462 [info] > git fetch [1577ms]
+2026-10-09 09:42:22.462 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:42:22.468 [info] > git config --get commit.template [5ms]
+2026-10-09 09:42:22.470 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:42:22.478 [info] > git status -z -uall [7ms]
+2026-10-09 09:42:22.478 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:44:12.133 [info] > git rev-parse --show-toplevel [52ms]
+2026-10-09 09:44:12.133 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:44:14.298 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 09:44:14.298 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:45:44.342 [info] > git fetch [576ms]
+2026-10-09 09:45:44.350 [info] > git config --get commit.template [6ms]
+2026-10-09 09:45:44.351 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [7ms]
+2026-10-09 09:45:44.360 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:45:44.381 [info] > git status -z -uall [29ms]
+2026-10-09 09:45:45.283 [info] > git fetch [1515ms]
+2026-10-09 09:45:45.283 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:45:45.289 [info] > git config --get commit.template [6ms]
+2026-10-09 09:45:45.290 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 09:45:45.300 [info] > git status -z -uall [7ms]
+2026-10-09 09:45:45.300 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:45:45.450 [info] > git config --get commit.template [7ms]
+2026-10-09 09:45:45.453 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [9ms]
+2026-10-09 09:45:45.464 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 09:45:45.471 [info] > git status -z -uall [17ms]
+2026-10-09 09:46:19.844 [info] > git rev-parse --show-toplevel [22ms]
+2026-10-09 09:46:19.844 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:46:24.733 [info] > git rev-parse --show-toplevel [23ms]
+2026-10-09 09:46:24.733 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:46:26.918 [info] > git rev-parse --show-toplevel [10ms]
+2026-10-09 09:46:26.918 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:49:49.532 [info] > git fetch [635ms]
+2026-10-09 09:49:49.540 [info] > git config --get commit.template [6ms]
+2026-10-09 09:49:49.541 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [7ms]
+2026-10-09 09:49:49.550 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:49:49.571 [info] > git status -z -uall [29ms]
+2026-10-09 09:49:50.336 [info] > git fetch [1435ms]
+2026-10-09 09:49:50.336 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:49:50.342 [info] > git config --get commit.template [5ms]
+2026-10-09 09:49:50.344 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:49:50.352 [info] > git status -z -uall [7ms]
+2026-10-09 09:49:50.352 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:49:50.691 [info] > git config --get commit.template [6ms]
+2026-10-09 09:49:50.692 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:49:50.701 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:49:50.706 [info] > git status -z -uall [13ms]
+2026-10-09 09:49:54.688 [info] > git rev-parse --show-toplevel [33ms]
+2026-10-09 09:49:54.688 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:51:00.113 [info] > git rev-parse --show-toplevel [66ms]
+2026-10-09 09:51:00.114 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:51:35.695 [info] > git config --get commit.template [26ms]
+2026-10-09 09:51:35.705 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [33ms]
+2026-10-09 09:51:35.722 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 09:51:35.726 [info] > git status -z -uall [19ms]
+2026-10-09 09:52:18.530 [info] > git check-ignore -v -z --stdin [22ms]
+2026-10-09 09:52:18.540 [info] > git ls-files --stage -- test_irb4600.py [7ms]
+2026-10-09 09:52:18.541 [info] > git show --textconv :test_irb4600.py [9ms]
+2026-10-09 09:52:18.548 [info] > git hash-object -t tree /dev/null [7ms]
+2026-10-09 09:52:18.548 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/test_irb4600.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Ftest_irb4600.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 09:52:18.549 [info] > git hash-object -t tree /dev/null [7ms]
+2026-10-09 09:52:18.549 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/test_irb4600.py.git?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Ftest_irb4600.py%22%2C%22ref%22%3A%22%22%7D
+2026-10-09 09:52:18.803 [info] > git check-ignore -v -z --stdin [9ms]
+2026-10-09 09:52:19.380 [info] > git config --get commit.template [9ms]
+2026-10-09 09:52:19.383 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [12ms]
+2026-10-09 09:52:19.395 [info] > git status -z -uall [10ms]
+2026-10-09 09:52:19.396 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 09:52:21.974 [info] > git rev-parse --show-toplevel [42ms]
+2026-10-09 09:52:21.974 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:52:56.952 [info] > git fetch [811ms]
+2026-10-09 09:52:56.959 [info] > git config --get commit.template [5ms]
+2026-10-09 09:52:56.960 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:52:56.968 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:52:56.989 [info] > git status -z -uall [28ms]
+2026-10-09 09:52:57.993 [info] > git fetch [1849ms]
+2026-10-09 09:52:57.993 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:52:58.000 [info] > git config --get commit.template [6ms]
+2026-10-09 09:52:58.001 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:52:58.009 [info] > git status -z -uall [7ms]
+2026-10-09 09:52:58.009 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 09:52:58.043 [info] > git config --get commit.template [6ms]
+2026-10-09 09:52:58.044 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [6ms]
+2026-10-09 09:52:58.054 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:52:58.060 [info] > git status -z -uall [14ms]
+2026-10-09 09:52:59.369 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 09:52:59.369 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:55:20.630 [info] > git check-ignore -v -z --stdin [24ms]
+2026-10-09 09:55:20.640 [info] > git ls-files --stage -- scene.py [7ms]
+2026-10-09 09:55:20.644 [info] > git show --textconv :scene.py [11ms]
+2026-10-09 09:55:20.648 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [7ms]
+2026-10-09 09:55:39.827 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental fdae2b54bc26d164fea72667dd1a7e6108b1e54f -- scene.py [34ms]
+2026-10-09 09:55:45.316 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 09:55:45.329 [info] > git ls-files --stage -- scene.py [10ms]
+2026-10-09 09:55:45.332 [info] > git show --textconv :scene.py [13ms]
+2026-10-09 09:55:45.339 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [9ms]
+2026-10-09 09:55:57.649 [info] > git fetch [650ms]
+2026-10-09 09:55:57.656 [info] > git config --get commit.template [6ms]
+2026-10-09 09:55:57.657 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [7ms]
+2026-10-09 09:55:57.665 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:55:57.687 [info] > git status -z -uall [29ms]
+2026-10-09 09:55:58.010 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 09:55:58.739 [info] > git config --get commit.template [9ms]
+2026-10-09 09:55:58.742 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [10ms]
+2026-10-09 09:55:58.753 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-10-09 09:55:58.760 [info] > git status -z -uall [18ms]
+2026-10-09 09:55:59.082 [info] > git check-ignore -v -z --stdin [13ms]
+2026-10-09 09:55:59.296 [info] > git ls-files --stage -- scene.py [15ms]
+2026-10-09 09:55:59.309 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [12ms]
+2026-10-09 09:55:59.322 [info] > git show --textconv :scene.py [11ms]
+2026-10-09 09:55:59.725 [info] > git fetch [1707ms]
+2026-10-09 09:55:59.725 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:55:59.730 [info] > git config --get commit.template [5ms]
+2026-10-09 09:55:59.732 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 09:55:59.741 [info] > git status -z -uall [8ms]
+2026-10-09 09:55:59.741 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:56:00.060 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 09:58:58.406 [info] > git fetch [707ms]
+2026-10-09 09:58:58.414 [info] > git config --get commit.template [7ms]
+2026-10-09 09:58:58.416 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [8ms]
+2026-10-09 09:58:58.425 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 09:58:58.450 [info] > git status -z -uall [33ms]
+2026-10-09 09:58:58.776 [info] > git check-ignore -v -z --stdin [16ms]
+2026-10-09 09:58:59.500 [info] > git config --get commit.template [16ms]
+2026-10-09 09:58:59.504 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [16ms]
+2026-10-09 09:58:59.520 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [14ms]
+2026-10-09 09:58:59.529 [info] > git status -z -uall [24ms]
+2026-10-09 09:58:59.845 [info] > git check-ignore -v -z --stdin [8ms]
+2026-10-09 09:59:00.970 [info] > git ls-files --stage -- scene.py [10ms]
+2026-10-09 09:59:00.978 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [8ms]
+2026-10-09 09:59:00.989 [info] > git show --textconv :scene.py [7ms]
+2026-10-09 09:59:01.295 [info] > git fetch [1543ms]
+2026-10-09 09:59:01.295 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 09:59:01.301 [info] > git config --get commit.template [6ms]
+2026-10-09 09:59:01.303 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 09:59:01.311 [info] > git status -z -uall [7ms]
+2026-10-09 09:59:01.311 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 09:59:01.631 [info] > git check-ignore -v -z --stdin [13ms]
+2026-10-09 09:59:51.607 [info] > git rev-parse --show-toplevel [21ms]
+2026-10-09 09:59:51.607 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 09:59:55.204 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 09:59:55.214 [info] > git ls-files --stage -- irb4600/visual/base_link.dae [8ms]
+2026-10-09 09:59:55.219 [info] > git show --textconv :irb4600/visual/base_link.dae [13ms]
+2026-10-09 09:59:55.221 [info] > git cat-file -s 523cacc14938c3db54d7b9a0a3c1732e01e9e01c [7ms]
+2026-10-09 10:00:05.414 [info] > git rev-parse --show-toplevel [59ms]
+2026-10-09 10:00:05.414 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:00:13.194 [info] > git rev-parse --show-toplevel [14ms]
+2026-10-09 10:00:13.194 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:00:18.024 [info] > git rev-parse --show-toplevel [52ms]
+2026-10-09 10:00:18.024 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:01:02.320 [info] > git rev-parse --show-toplevel [58ms]
+2026-10-09 10:01:02.320 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:01:20.590 [info] > git rev-parse --show-toplevel [43ms]
+2026-10-09 10:01:20.591 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:01:28.011 [info] > git rev-parse --show-toplevel [10ms]
+2026-10-09 10:01:28.011 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:01:59.073 [info] > git fetch [611ms]
+2026-10-09 10:01:59.083 [info] > git config --get commit.template [8ms]
+2026-10-09 10:01:59.085 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [9ms]
+2026-10-09 10:01:59.095 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 10:01:59.117 [info] > git status -z -uall [31ms]
+2026-10-09 10:02:00.154 [info] > git config --get commit.template [6ms]
+2026-10-09 10:02:00.156 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/noetic-devel refs/remotes/noetic-devel [8ms]
+2026-10-09 10:02:00.165 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 10:02:00.171 [info] > git status -z -uall [15ms]
+2026-10-09 10:02:03.047 [info] > git fetch [1723ms]
+2026-10-09 10:02:03.047 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 10:02:03.053 [info] > git config --get commit.template [5ms]
+2026-10-09 10:02:03.055 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 10:02:03.062 [info] > git status -z -uall [7ms]
+2026-10-09 10:02:03.063 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:02:14.445 [info] > git check-ignore -v -z --stdin [17ms]
+2026-10-09 10:02:24.372 [info] > git check-ignore -v -z --stdin [18ms]
+2026-10-09 10:02:24.958 [warning] [Git][getHEAD] Failed to parse HEAD file: ENOENT: no such file or directory, open '/Users/lieeharm/Industrial_Robotics/abb/.git/HEAD'
+2026-10-09 10:02:24.961 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/Users/lieeharm/Industrial_Robotics/abb/.git/config'
+2026-10-09 10:02:24.969 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/Users/lieeharm/Industrial_Robotics/abb/.git/config'
+2026-10-09 10:02:24.969 [warning] [Git][getHEAD] Failed to parse HEAD file: ENOENT: no such file or directory, open '/Users/lieeharm/Industrial_Robotics/abb/.git/HEAD'
+2026-10-09 10:02:24.975 [info] > git config --get commit.template [17ms]
+2026-10-09 10:02:24.990 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [17ms]
+2026-10-09 10:02:25.004 [info] > git status -z -uall [13ms]
+2026-10-09 10:02:25.004 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 10:02:25.578 [info] > git check-ignore -v -z --stdin [10ms]
+2026-10-09 10:03:20.265 [info] > git rev-parse --show-toplevel [64ms]
+2026-10-09 10:03:20.266 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:03:21.158 [info] > git config --get commit.template [8ms]
+2026-10-09 10:03:21.165 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 10:03:21.173 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:03:21.176 [info] > git status -z -uall [11ms]
+2026-10-09 10:03:26.666 [info] > git rev-parse --show-toplevel [14ms]
+2026-10-09 10:03:26.666 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:04:17.039 [info] > git rev-parse --show-toplevel [112ms]
+2026-10-09 10:04:17.039 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:04:17.820 [info] > git config --get commit.template [6ms]
+2026-10-09 10:04:17.827 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 10:04:17.835 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:04:17.839 [info] > git status -z -uall [12ms]
+2026-10-09 10:04:19.131 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 10:04:19.131 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:04:25.405 [info] > git rev-parse --show-toplevel [42ms]
+2026-10-09 10:04:25.405 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:04:26.237 [info] > git config --get commit.template [6ms]
+2026-10-09 10:04:26.238 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-10-09 10:04:26.245 [info] > git status -z -uall [7ms]
+2026-10-09 10:04:26.245 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 10:04:27.177 [info] > git rev-parse --show-toplevel [6ms]
+2026-10-09 10:04:27.177 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:07:17.732 [info] > git fetch [1731ms]
+2026-10-09 10:07:17.732 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 10:07:17.739 [info] > git config --get commit.template [6ms]
+2026-10-09 10:07:17.741 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 10:07:17.750 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 10:07:17.751 [info] > git status -z -uall [10ms]
+2026-10-09 10:09:18.790 [info] > git rev-parse --show-toplevel [66ms]
+2026-10-09 10:09:18.790 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:09:19.624 [info] > git config --get commit.template [7ms]
+2026-10-09 10:09:19.631 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 10:09:19.641 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 10:09:19.646 [info] > git status -z -uall [14ms]
+2026-10-09 10:10:21.009 [info] > git fetch [1623ms]
+2026-10-09 10:10:21.009 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 10:10:21.015 [info] > git config --get commit.template [5ms]
+2026-10-09 10:10:21.017 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-10-09 10:10:21.026 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-10-09 10:10:21.027 [info] > git status -z -uall [9ms]
+2026-10-09 10:10:24.311 [info] > git config --get commit.template [12ms]
+2026-10-09 10:10:24.313 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [13ms]
+2026-10-09 10:10:24.329 [info] > git status -z -uall [14ms]
+2026-10-09 10:10:24.329 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 10:10:25.848 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [36ms]
+2026-10-09 10:10:25.880 [info] > git rev-parse --show-toplevel [7ms]
+2026-10-09 10:10:25.880 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-10-09 10:10:26.856 [info] > git merge-base main origin/main [9ms]
+2026-10-09 10:10:36.031 [info] > git config --get commit.template [8ms]
+2026-10-09 10:10:36.033 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-10-09 10:10:36.043 [info] > git status -z -uall [9ms]
+2026-10-09 10:10:36.043 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 10:10:55.898 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [60ms]
+2026-10-09 10:10:55.911 [info] > git merge-base main origin/main [7ms]
+2026-10-09 10:11:07.098 [info] > git ls-tree -l HEAD -- scene.py [9ms]
+2026-10-09 10:11:07.099 [info] > git show --textconv HEAD:scene.py [11ms]
+2026-10-09 10:11:07.344 [info] > git check-ignore -v -z --stdin [11ms]
+2026-10-09 10:11:07.356 [info] > git ls-files --stage -- scene.py [8ms]
+2026-10-09 10:11:07.358 [info] > git show --textconv :scene.py [11ms]
+2026-10-09 10:11:07.365 [info] > git cat-file -s 5675cb6e730489032996306b8163cc3674b9d39a [9ms]
+2026-10-09 10:11:12.934 [info] > git checkout -q -- scene.py [19ms]
+2026-10-09 10:11:12.945 [info] > git config --get commit.template [9ms]
+2026-10-09 10:11:12.948 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [11ms]
+2026-10-09 10:11:12.958 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-10-09 10:11:12.959 [info] > git status -z -uall [10ms]
+2026-10-09 10:11:13.455 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 10:11:14.244 [info] > git config --get commit.template [11ms]
+2026-10-09 10:11:14.245 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [11ms]
+2026-10-09 10:11:14.258 [info] > git status -z -uall [12ms]
+2026-10-09 10:11:14.258 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 10:11:14.347 [info] > git ls-tree -l HEAD -- scene.py [11ms]
+2026-10-09 10:11:14.356 [info] > git show --textconv HEAD:scene.py [8ms]
+2026-10-09 10:11:19.280 [info] > git config --get commit.template [15ms]
+2026-10-09 10:11:19.283 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [15ms]
+2026-10-09 10:11:19.298 [info] > git status -z -uall [13ms]
+2026-10-09 10:11:19.298 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 10:11:25.216 [info] > git add -A -- . [20ms]
+2026-10-09 10:11:25.216 [info] warning: adding embedded git repository: abb
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: 	git submodule add <url> abb
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: 	git rm --cached abb
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config set advice.addEmbeddedRepo false"
+2026-10-09 10:11:25.910 [info] > git check-ignore -v -z --stdin [13ms]
+2026-10-09 10:11:26.530 [info] > git ls-tree -l HEAD -- scene.py [8ms]
+2026-10-09 10:11:26.539 [info] > git show --textconv HEAD:scene.py [7ms]
+2026-10-09 10:12:00.870 [info] > git -c user.useConfigOnly=true commit --quiet [35653ms]
+2026-10-09 10:12:00.887 [info] > git config --get commit.template [14ms]
+2026-10-09 10:12:00.891 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [17ms]
+2026-10-09 10:12:00.901 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 10:12:00.920 [info] > git status -z -uall [28ms]
+2026-10-09 10:12:00.932 [info] > git merge-base refs/heads/main refs/remotes/origin/main [9ms]
+2026-10-09 10:12:00.943 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% fdae2b54bc26d164fea72667dd1a7e6108b1e54f...refs/remotes/origin/main -- [10ms]
+2026-10-09 10:12:00.944 [info] > git config --get commit.template [7ms]
+2026-10-09 10:12:00.946 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-10-09 10:12:00.954 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:12:00.957 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [25ms]
+2026-10-09 10:12:00.967 [info] > git status -z -uall [21ms]
+2026-10-09 10:12:00.969 [info] > git merge-base main origin/main [7ms]
+2026-10-09 10:12:01.285 [info] > git check-ignore -v -z --stdin [14ms]
+2026-10-09 10:12:01.298 [info] > git ls-files --stage -- test_irb4600.py [9ms]
+2026-10-09 10:12:01.301 [info] > git show --textconv :test_irb4600.py [13ms]
+2026-10-09 10:12:01.309 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [10ms]
+2026-10-09 10:12:01.330 [info] > git -c i18n.logOutputEncoding=UTF-8 blame --root --incremental 3abffefde6541837fc614485f06509287151ccd4 -- test_irb4600.py [10ms]
+2026-10-09 10:12:02.001 [info] > git ls-files --stage -- test_irb4600.py [13ms]
+2026-10-09 10:12:02.003 [info] > git ls-tree -l HEAD -- scene.py [17ms]
+2026-10-09 10:12:02.014 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [12ms]
+2026-10-09 10:12:02.017 [info] > git show --textconv HEAD:scene.py [12ms]
+2026-10-09 10:12:02.027 [info] > git show --textconv :test_irb4600.py [11ms]
+2026-10-09 10:12:03.003 [info] > git config --get commit.template [14ms]
+2026-10-09 10:12:03.007 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [16ms]
+2026-10-09 10:12:03.021 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 10:12:03.041 [info] > git status -z -uall [33ms]
+2026-10-09 10:13:05.707 [info] > git add -A -- . [58ms]
+2026-10-09 10:13:05.746 [info] > git -c user.useConfigOnly=true commit --quiet [39ms]
+2026-10-09 10:13:05.752 [info] > git config --get-all user.name [5ms]
+2026-10-09 10:13:05.758 [info] > git config --get-all user.email [6ms]
+2026-10-09 10:13:05.764 [info] > git config --get commit.template [5ms]
+2026-10-09 10:13:05.767 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 10:13:05.775 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:13:05.788 [info] > git status -z -uall [21ms]
+2026-10-09 10:13:06.906 [info] > git config --get commit.template [12ms]
+2026-10-09 10:13:06.909 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 10:13:06.923 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-10-09 10:13:06.943 [info] > git status -z -uall [32ms]
+2026-10-09 10:13:07.003 [info] > git ls-files --stage -- test_irb4600.py [9ms]
+2026-10-09 10:13:07.004 [info] > git ls-tree -l HEAD -- scene.py [11ms]
+2026-10-09 10:13:07.012 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [9ms]
+2026-10-09 10:13:07.014 [info] > git show --textconv HEAD:scene.py [8ms]
+2026-10-09 10:13:07.021 [info] > git show --textconv :test_irb4600.py [8ms]
+2026-10-09 10:13:11.957 [info] > git config --get commit.template [10ms]
+2026-10-09 10:13:11.960 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [12ms]
+2026-10-09 10:13:11.969 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-10-09 10:13:11.983 [info] > git status -z -uall [22ms]
+2026-10-09 10:13:22.303 [info] > git ls-files --stage -- test_irb4600.py [8ms]
+2026-10-09 10:13:22.303 [info] > git ls-tree -l HEAD -- scene.py [9ms]
+2026-10-09 10:13:22.313 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [10ms]
+2026-10-09 10:13:22.314 [info] > git show --textconv HEAD:scene.py [9ms]
+2026-10-09 10:13:22.322 [info] > git show --textconv :test_irb4600.py [7ms]
+2026-10-09 10:13:22.502 [info] > git fetch [1467ms]
+2026-10-09 10:13:22.502 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-10-09 10:13:22.508 [info] > git config --get commit.template [5ms]
+2026-10-09 10:13:22.512 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-10-09 10:13:22.520 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:13:22.538 [info] > git status -z -uall [25ms]
+2026-10-09 10:13:31.303 [info] > git add -A -- . [36ms]
+2026-10-09 10:13:31.345 [info] > git -c user.useConfigOnly=true commit --quiet [41ms]
+2026-10-09 10:13:31.351 [info] > git config --get-all user.name [5ms]
+2026-10-09 10:13:31.387 [info] > git config --get-all user.email [35ms]
+2026-10-09 10:13:31.400 [info] > git config --get commit.template [12ms]
+2026-10-09 10:13:31.403 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [14ms]
+2026-10-09 10:13:31.412 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:13:31.426 [info] > git status -z -uall [22ms]
+2026-10-09 10:13:32.503 [info] > git config --get commit.template [14ms]
+2026-10-09 10:13:32.507 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [16ms]
+2026-10-09 10:13:32.523 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 10:13:32.548 [info] > git status -z -uall [38ms]
+2026-10-09 10:13:32.593 [info] > git ls-files --stage -- test_irb4600.py [6ms]
+2026-10-09 10:13:32.596 [info] > git ls-tree -l HEAD -- scene.py [8ms]
+2026-10-09 10:13:32.602 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [8ms]
+2026-10-09 10:13:32.605 [info] > git show --textconv HEAD:scene.py [8ms]
+2026-10-09 10:13:32.615 [info] > git show --textconv :test_irb4600.py [12ms]
+2026-10-09 10:13:37.569 [info] > git config --get commit.template [15ms]
+2026-10-09 10:13:37.572 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [17ms]
+2026-10-09 10:13:37.589 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 10:13:37.648 [info] > git status -z -uall [73ms]
+2026-10-09 10:13:43.694 [info] > git show --textconv HEAD:abb [22ms]
+2026-10-09 10:13:43.694 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/abb?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fabb%22%2C%22ref%22%3A%22~%22%7D
+2026-10-09 10:13:43.695 [info] > git ls-tree -l HEAD -- abb [22ms]
+2026-10-09 10:13:47.408 [info] > git ls-tree -l HEAD -- abb [17ms]
+2026-10-09 10:13:47.409 [info] > git show --textconv HEAD:abb [19ms]
+2026-10-09 10:13:47.409 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/abb?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fabb%22%2C%22ref%22%3A%22~%22%7D
+2026-10-09 10:13:55.225 [info] > git check-ignore -v -z --stdin [15ms]
+2026-10-09 10:13:59.992 [info] > git -c i18n.logOutputEncoding=UTF-8 log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [32ms]
+2026-10-09 10:14:00.010 [info] > git merge-base main origin/main [11ms]
+2026-10-09 10:14:02.738 [info] > git add -A -- . [57ms]
+2026-10-09 10:14:02.777 [info] > git -c user.useConfigOnly=true commit --quiet [38ms]
+2026-10-09 10:14:02.783 [info] > git config --get-all user.name [5ms]
+2026-10-09 10:14:02.789 [info] > git config --get-all user.email [5ms]
+2026-10-09 10:14:02.797 [info] > git config --get commit.template [7ms]
+2026-10-09 10:14:02.799 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [8ms]
+2026-10-09 10:14:02.807 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-09 10:14:02.821 [info] > git status -z -uall [21ms]
+2026-10-09 10:14:03.940 [info] > git config --get commit.template [15ms]
+2026-10-09 10:14:03.944 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [17ms]
+2026-10-09 10:14:03.960 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [13ms]
+2026-10-09 10:14:03.982 [info] > git status -z -uall [36ms]
+2026-10-09 10:14:04.031 [info] > git ls-files --stage -- test_irb4600.py [8ms]
+2026-10-09 10:14:04.040 [info] > git cat-file -s fe3455e99b8dbe45f8542153068dc9d7333fa509 [9ms]
+2026-10-09 10:14:04.051 [info] > git show --textconv :test_irb4600.py [7ms]
+2026-10-09 10:14:09.009 [info] > git config --get commit.template [19ms]
+2026-10-09 10:14:09.013 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [21ms]
+2026-10-09 10:14:09.029 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2026-10-09 10:14:09.051 [info] > git status -z -uall [35ms]
+2026-10-09 10:14:37.008 [info] > git show --textconv HEAD:abb [37ms]
+2026-10-09 10:14:37.009 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/lieeharm/Industrial_Robotics/The-Jacobian-Hotel/abb?%7B%22path%22%3A%22%2FUsers%2Flieeharm%2FIndustrial_Robotics%2FThe-Jacobian-Hotel%2Fabb%22%2C%22ref%22%3A%22~%22%7D
+2026-10-09 10:14:37.010 [info] > git ls-tree -l HEAD -- abb [37ms]
