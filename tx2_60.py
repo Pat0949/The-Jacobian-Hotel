@@ -2,115 +2,68 @@ import os
 import shutil
 import tempfile
 import numpy as np
-from roboticstoolbox import DHRobot, RevoluteDH
-from spatialmath import SE3
+import swift
 import spatialgeometry as sg
+from spatialmath import SE3
+from roboticstoolbox import DHRobot, RevoluteDH
 
-# Absolute path to the real meshes/ folder next to this script (this is
-# what lives in the git repo and what you submit).
-_PROJECT_MESH_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "meshes")
+# Workaround for my update_pyb error
+if not hasattr(sg.Shape, "_update_pyb"):
+    sg.Shape._update_pyb = lambda self: None
+
+deg = np.pi / 180
+YELLOW = [0.9, 0.8, 0.1]
+GREY = [0.7, 0.7, 0.7]
+
+# Liam if it doesnt run and has an issue finding the mesh files uncomment these 3 lines
+#PROJECT_MESHES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "meshes")
+#MESH_DIR = os.path.join(tempfile.gettempdir(), "tx2_60_meshes")
+#shutil.copytree(PROJECT_MESHES, MESH_DIR, dirs_exist_ok=True)
+MESH_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "meshes")
+
+# d, a, alpha, offset, joint limits, colour
+DH = [
+    (0.375, 0.0,   -np.pi / 2,  0.0,       [-180 * deg, 180 * deg],     YELLOW),
+    (0.020, 0.290,  0.0,       -np.pi / 2, [-127.5 * deg, 127.5 * deg], YELLOW),
+    (0.0,   0.0,    np.pi / 2,  np.pi / 2, [-142.5 * deg, 142.5 * deg], YELLOW),
+    (0.310, 0.0,   -np.pi / 2,  0.0,       [-270 * deg, 270 * deg],     GREY),
+    (0.0,   0.0,    np.pi / 2,  0.0,       [-121 * deg, 132.5 * deg],   GREY),
+    (0.070, 0.0,    0.0,        0.0,       [-270 * deg, 270 * deg],     GREY),
+]
+
+# joint origins within the world cooridinate frame
+MESH_ORIGINS = [
+    (0, 0.00, 0.375),   # link_1
+    (0, 0.00, 0.375),   # link_2
+    (0, 0.02, 0.665),   # link_3
+    (0, 0.02, 0.665),   # link_4
+    (0, 0.02, 0.975),   # link_5
+    (0, 0.02, 1.045),   # link_6
+]
 
 
-def _stage_meshes_for_swift(mesh_dir):
-    """
-    Swift's local file server can fail to load meshes from a path that
-    contains spaces (e.g. ".../Industrial Robotics/...") because the
-    URL-encoded space isn't always decoded correctly before the file is
-    opened. To work around this, copy the .stl files into the system temp
-    folder (which has no spaces in the path for this user) once per run,
-    and point the visual geometry at that copy instead. The real meshes/
-    folder in the repo is untouched -- this only affects the live preview.
-    """
-    staged_dir = os.path.join(tempfile.gettempdir(), "tx2_60_meshes")
-    os.makedirs(staged_dir, exist_ok=True)
-    for fname in os.listdir(mesh_dir):
-        if fname.lower().endswith(".stl"):
-            shutil.copy2(os.path.join(mesh_dir, fname),
-                         os.path.join(staged_dir, fname))
-    return staged_dir
+class TX2_60(DHRobot): #needed to reposition the joints since all their origins lie at the joint.
+    def __init__(self): #so we have an offset of the mesh origins
+        links = []
+        T = SE3()   # DH frame at the zero pose for each link going up
+        for i, (d, a, al, off, qlim, colour) in enumerate(DH):
+            T = T * RevoluteDH(d=d, a=a, alpha=al, offset=off).A(0)
+            mesh = sg.Mesh(os.path.join(MESH_DIR, f"link_{i + 1}.stl"),
+                           pose=T.inv() * SE3(*MESH_ORIGINS[i]), color=colour)
+            links.append(RevoluteDH(d=d, a=a, alpha=al, offset=off, qlim=qlim, geometry=[mesh]))
 
-
-MESH_DIR = _stage_meshes_for_swift(_PROJECT_MESH_DIR)
-
-
-class TX2_60(DHRobot):
-    """
-    Stäubli TX2-60 6-DOF industrial robot arm.
-
-    DH parameters
-
-        Joint | d      | a     | alpha    | range
-        ------+--------+-------+----------+-------------------
-          1   | 0.375  | 0.0   | -pi/2    | +-180 deg
-          2   | 0.020  | 0.290 |  0       | +-127.5 deg
-          3   | 0.0    | 0.0   |  pi/2    | +-142.5 deg
-          4   | 0.310  | 0.0   | -pi/2    | +-270 deg
-          5   | 0.0    | 0.0   |  pi/2    | +132.5/-121 deg
-          6   | 0.070  | 0.0   |  0       | +-270 deg
-
-    """
-
-    def __init__(self):
-        deg = np.pi / 180
-
-        links = [
-            RevoluteDH(d=0.375, a=0.0,   alpha=-np.pi / 2,
-                       qlim=[-180 * deg, 180 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_1.stl"),
-                                          color=[0.9, 0.8, 0.1])]),
-            RevoluteDH(d=0.020, a=0.290, alpha=0.0,
-                       qlim=[-127.5 * deg, 127.5 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_2.stl"),
-                                          color=[0.9, 0.8, 0.1])]),
-            RevoluteDH(d=0.0,   a=0.0,   alpha=np.pi / 2,
-                       qlim=[-142.5 * deg, 142.5 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_3.stl"),
-                                          color=[0.9, 0.8, 0.1])]),
-            RevoluteDH(d=0.310, a=0.0,   alpha=-np.pi / 2,
-                       qlim=[-270 * deg, 270 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_4.stl"),
-                                          color=[0.7, 0.7, 0.7])]),
-            RevoluteDH(d=0.0,   a=0.0,   alpha=np.pi / 2,
-                       qlim=[-121 * deg, 132.5 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_5.stl"),
-                                          color=[0.7, 0.7, 0.7])]),
-            RevoluteDH(d=0.070, a=0.0,   alpha=0.0,
-                       qlim=[-270 * deg, 270 * deg],
-                       geometry=[sg.Mesh(filename=os.path.join(MESH_DIR, "link_6.stl"),
-                                          color=[0.7, 0.7, 0.7])]),
-        ]
-
-        super().__init__(
-            links,
-            name="Staubli_TX2_60",
-            manufacturer="Staubli",
-        )
-
-        self.qz = np.zeros(6)
-        self.addconfiguration("qz", self.qz)
-
-        self.q_extended = np.array([0, 0, 90 * deg, 0, 0, 0])
-        self.addconfiguration("q_extended", self.q_extended)
-
-        self.qr = np.array([0, -30 * deg, 90 * deg, 0, 60 * deg, 0])
-        self.addconfiguration("qr", self.qr)
+        super().__init__(links, name="Staubli_TX2_60", manufacturer="Staubli")
+        self.qz = np.zeros(6)   # straight up
 
 
 if __name__ == "__main__":
     robot = TX2_60()
-    print(robot)
 
-    T = robot.fkine(robot.q_extended)
-    horiz_reach = np.hypot(T.t[0], T.t[1])
-    print(f"\nEnd-effector pose at 'q_extended': \n{T}")
-    print(f"Horizontal reach: {horiz_reach * 1000:.1f} mm "
-          f"(datasheet quotes 670 mm)")
-
-    from roboticstoolbox.backends.swift import Swift
-
-    env = Swift()
+    env = swift.Swift()
     env.launch(realtime=True)
+
+    robot.q = robot.qz
     env.add(robot)
-    robot.q = robot.qr
+    env.add(sg.Mesh(os.path.join(MESH_DIR, "base_link.stl"), pose=robot.base, color=[0.2, 0.2, 0.2]))
     env.step()
     env.hold()
