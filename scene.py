@@ -16,12 +16,12 @@ def build_scene(env):
     ur3eHomeQ = np.array([0, -pi/2, 0, 0, 0, 0])
     ur3e.q = ur3eHomeQ
     ur3eLimits = [
-        (-2*pi, 2*pi),   # joint 1 - base
-        (-2*pi/3, 0),   # joint 2 - shoulder
-        (-pi, pi),       # joint 3 - elbow
-        (-2*pi/3, 2*pi/3),   # joint 4 - wrist 1
-        (-2*pi, 2*pi),   # joint 5 - wrist 2
-        (-2*pi, 2*pi),   # joint 6 - wrist 3
+        (-2*pi, 2*pi),   
+        (-pi, 0),        
+        (-pi, pi),       
+        (-pi, pi),       
+        (-2*pi, 2*pi),   
+        (-2*pi, 2*pi),   
     ]
     for link, (lo, hi) in zip(ur3e.links, ur3eLimits):
         link.qlim = [lo, hi]
@@ -32,10 +32,10 @@ def build_scene(env):
     # ur3e chair
     ur3eChair = part_mesh("SimpleTable")
     ur3eChair.scale = (0.9,0.675,1.5)
-    ur3eChair.T = SE3(1,-1.2,0.005)
+    ur3eChair.T = SE3(1,-1.25,0.005)
     env.add(ur3eChair)
 
-    # bar table
+    # tables
     tablePositions = [(1, 5), (2.5, 2), (-0.5, 2.5)]
     for x, y in tablePositions:
         tablePose = SE3(x, y, 0)
@@ -54,8 +54,8 @@ def build_scene(env):
 
     # bar table
     barTable = part_mesh("BarTable")
-    barTable.scale = (2,0.8,0.8)
-    barTable.T = SE3(1,-0.45,0.005)
+    barTable.scale = (2,0.5,0.8)
+    barTable.T = SE3(1,-0.7,0.005)
     env.add(barTable)
 
     floor = sg.Cuboid(
@@ -75,7 +75,7 @@ def build_scene(env):
     # shelf
     barTable = part_mesh("WallShelf")
     barTable.scale = (4,2.5,2)
-    barTable.T = SE3(1,-2,0.705)
+    barTable.T = SE3(1,-1.9,0.705)
     env.add(barTable)
 
     wall = sg.Cuboid(
@@ -88,22 +88,26 @@ def build_scene(env):
     # wine bottle
     wineBottle = part_mesh("WineBottle")
     wineBottle.scale = (1,1,1)
-    wineBottle.T = SE3(0.75, -1.85, 0.95)
+    wineBottle.T = SE3(0.75, -1.7, 0.95)
     env.add(wineBottle)
 
     spiritBottle = part_mesh("SpiritBottle")
     spiritBottle.scale = (1,1,1)
-    spiritBottle.T = SE3(1, -1.85, 0.95)
+    spiritBottle.T = SE3(1, -1.7, 0.95)
     env.add(spiritBottle)
 
     beerBottle = part_mesh("BeerBottle")
     beerBottle.scale = (1.25,1,1)
-    beerBottle.T = SE3(1.2, -1.85, 0.95)
+    beerBottle.T = SE3(1.2, -1.7, 0.95)
     env.add(beerBottle)
 
 
     return {
             "env": env,
+            "ur3e": ur3e,
+            "beerBottle": beerBottle,
+            "spiritBottle": spiritBottle,
+            "wineBottle": wineBottle,
     }
     
 if __name__ == "__main__":
