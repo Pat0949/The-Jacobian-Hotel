@@ -22,8 +22,8 @@ def main():
     scene = build_scene(env)
     env.step()
 
-    input("Press Enter to pick up the spirit bottle\n")
-    pick_Place(scene["ur3e"], env, scene["spiritBottle"], DrinkHandover)
+    customerOrder = input("What is your oder? (beer, spirit or wine) ").strip().lower()
+    pick_Place(scene["ur3e"], env, scene[customerOrder], DrinkHandover)
 
     input("Done. Press Enter to close\n")
 

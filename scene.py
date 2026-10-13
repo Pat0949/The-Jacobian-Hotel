@@ -105,9 +105,9 @@ def build_scene(env):
     return {
             "env": env,
             "ur3e": ur3e,
-            "beerBottle": beerBottle,
-            "spiritBottle": spiritBottle,
-            "wineBottle": wineBottle,
+            "beer": beerBottle,
+            "spirit": spiritBottle,
+            "wine": wineBottle,
     }
     
 if __name__ == "__main__":
