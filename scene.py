@@ -7,7 +7,7 @@ from ir_support.robots import UR3e
 from roboticstoolbox.backends.swift import Swift
 from ir_support_extra_parts.parts import part_mesh
 
-
+from IRB4600_Visual import make_irb4600, load_meshes
 
 def build_scene(env):
 
@@ -101,6 +101,14 @@ def build_scene(env):
     beerBottle.T = SE3(1.2, -1.7, 0.95)
     env.add(beerBottle)
 
+    #Place and add IRB4600 Robot
+    robot = make_irb4600()
+    robot.q = np.zeros(6)
+    load_meshes(robot)
+    robot.base = SE3(0, 7, 0)
+    robot.base_mesh.T = robot.base.A
+    env.add(robot.base_mesh)
+    env.add(robot)
 
     return {
             "env": env,
