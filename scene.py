@@ -105,7 +105,8 @@ def build_scene(env):
 
     #Place and add IRB4600 Robot
     IRB4600_robot = IRB4600(SE3(0, 1, 0))
-    IRB4600_robot.add_to_env(env)
+    env.add(IRB4600_robot.base_mesh)
+    env.add(IRB4600_robot)
 
     # place and add tx2_60 robot
     tx2 = TX2_60()
