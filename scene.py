@@ -104,9 +104,7 @@ def build_scene(env):
     env.add(beerBottle)
 
     #Place and add IRB4600 Robot
-    IRB4600_robot = IRB4600()
-    IRB4600_robot.load_meshes()
-    IRB4600_robot.set_base(SE3(-2, 0, 0))
+    IRB4600_robot = IRB4600(SE3(0, 1, 0))
     IRB4600_robot.add_to_env(env)
     env.hold()
 
