@@ -1,4 +1,5 @@
 import swift
+import os
 from spatialmath import SE3
 import spatialgeometry as sg
 from math import pi
@@ -6,6 +7,7 @@ import numpy as np
 from ir_support.robots import UR3e
 from roboticstoolbox.backends.swift import Swift
 from ir_support_extra_parts.parts import part_mesh
+from tx2_60 import TX2_60, MESH_DIR
 
 from IRB4600_Visual import make_irb4600, load_meshes
 
@@ -109,6 +111,13 @@ def build_scene(env):
     robot.base_mesh.T = robot.base.A
     env.add(robot.base_mesh)
     env.add(robot)
+
+    # place and add tx2_60 robot
+    tx2 = TX2_60()
+    tx2.base = SE3(1, 2, 0)
+    tx2.q = tx2.qz
+    env.add(tx2)
+    env.add(sg.Mesh(os.path.join(MESH_DIR, "base_link.stl"), pose=tx2.base, color=[0.2, 0.2, 0.2]))
 
     return {
             "env": env,
