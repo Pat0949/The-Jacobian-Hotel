@@ -9,7 +9,7 @@ from roboticstoolbox.backends.swift import Swift
 from ir_support_extra_parts.parts import part_mesh
 from tx2_60 import TX2_60, MESH_DIR
 
-from IRB4600_Visual import make_irb4600, load_meshes
+from IRB4600_Visual import IRB4600
 
 def build_scene(env):
 
@@ -104,13 +104,11 @@ def build_scene(env):
     env.add(beerBottle)
 
     #Place and add IRB4600 Robot
-    robot = make_irb4600()
-    robot.q = np.zeros(6)
-    load_meshes(robot)
-    robot.base = SE3(0, 7, 0)
-    robot.base_mesh.T = robot.base.A
-    env.add(robot.base_mesh)
-    env.add(robot)
+    IRB4600_robot = IRB4600()
+    IRB4600_robot.load_meshes()
+    IRB4600_robot.set_base(SE3(-2, 0, 0))
+    IRB4600_robot.add_to_env(env)
+    env.hold()
 
     # place and add tx2_60 robot
     tx2 = TX2_60()
