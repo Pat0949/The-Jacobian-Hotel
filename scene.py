@@ -108,7 +108,6 @@ def build_scene(env):
     IRB4600_robot.load_meshes()
     IRB4600_robot.set_base(SE3(-2, 0, 0))
     IRB4600_robot.add_to_env(env)
-    env.hold()
 
     # place and add tx2_60 robot
     tx2 = TX2_60()
