@@ -7,6 +7,7 @@ import numpy as np
 from math import pi
 
 
+from joystickcontrols import manual_irb
 from robot_movement import solve_ik, move_arm
 from scene import build_scene
 from ur3e_pick import pick_Place
@@ -35,6 +36,8 @@ def main():
 
     move_arm(scene["IRB_robot"], q_home, q_target, env, steps=80)
     move_arm(scene["IRB_robot"], q_target, q_home, env, steps=80)
+
+    manual_irb(scene)
 
     input("Done. Press Enter to close\n")
 
