@@ -121,6 +121,7 @@ def build_scene(env):
             "beer": beerBottle,
             "spirit": spiritBottle,
             "wine": wineBottle,
+            "IRB_robot": IRB4600_robot,
     }
     
 if __name__ == "__main__":
