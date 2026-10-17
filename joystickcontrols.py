@@ -1,8 +1,7 @@
 import pygame
-import time
 import numpy as np
 
-def manual_irb(scene, duration=300, dt=0.1, attached_object=None, object_offset=None, ray=None):
+def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None):
     # -- Setup Joystick --
     pygame.init()
     pygame.joystick.init()
@@ -30,16 +29,10 @@ def manual_irb(scene, duration=300, dt=0.1, attached_object=None, object_offset=
     joystick_deadzone_threshold = 0.6  # deadzone threshold for joystick axes
     button_gain = 0.5  # button velocity gain (since buttons are binary)
 
-    start_time = time.time()
-    n = 0
-
-    trigger_ready = {4: False, 5: False}
-
     # -- Main Control Loop --
     try:
-        while (time.time() - start_time) < duration:
+        while True:
             pygame.event.pump()
-            n += 1
 
             # Read and print raw axis values
             axes_raw = [joy.get_axis(i) for i in range(joy.get_numaxes())]
@@ -48,8 +41,8 @@ def manual_irb(scene, duration=300, dt=0.1, attached_object=None, object_offset=
             buttons = [joy.get_button(i) for i in range(joy.get_numbuttons())]
 
             # Read triggers separately because they rest at -1 and reach 1 when fully pressed
-            left_trigger = (axes_raw[4] + 1) / 2 if len(axes_raw) > 4 else 0
-            right_trigger = (axes_raw[5] + 1) / 2 if len(axes_raw) > 5 else 0
+            left_trigger = (axes_raw[5] + 1) / 2 if len(axes_raw) > 5 else 0
+            right_trigger = (axes_raw[4] + 1) / 2 if len(axes_raw) > 4 else 0
 
             # Apply the same deadzone idea to the rescaled values
             left_trigger = 0 if left_trigger < joystick_deadzone_threshold else left_trigger
@@ -74,6 +67,9 @@ def manual_irb(scene, duration=300, dt=0.1, attached_object=None, object_offset=
 
             dq = Jinv_dls @ dx
             robot.q = robot.q + dq * dt
+
+            ray.keep_above_floor()
+            ray.update()
 
             if attached_object is not None and object_offset is not None:
                 robot_pose = robot.fkine(robot.q)

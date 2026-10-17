@@ -34,7 +34,7 @@ def main():
     target_pose = SE3(1.2, 1.3, 0.8) * SE3.Rx(pi)
     q_target = solve_ik(scene["IRB_robot"], target_pose, q_home)
 
-    ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env, max_range=1.5)
+    ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
 
     manual_irb(scene, ray=ray)
 
