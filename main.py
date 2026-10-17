@@ -5,12 +5,13 @@ import spatialgeometry as sg
 from spatialmath import SE3
 import numpy as np
 from math import pi
-from raysensor import EndEffectorRay
 
+from raysensor import EndEffectorRay
 from joystickcontrols import manual_irb
 from robot_movement import solve_ik, move_arm
 from scene import build_scene
-from ur3e_pick import pick_Place
+from bar_movements import pick_place, make_cocktail
+
 
 #workaround for the no update_pyb error
 
@@ -27,8 +28,11 @@ def main():
     scene = build_scene(env)
     env.step()
 
-    customerOrder = input("What is your oder? (beer, spirit or wine) ").strip().lower()
-    pick_Place(scene["ur3e"], env, scene[customerOrder], DrinkHandover)
+    customerOrder = input("What is your oder? (beer, wine or cocktail) ").strip().lower()
+    if customerOrder == "cocktail":
+        make_cocktail(env, scene)
+    else:
+        pick_place(env, scene["ur3e"], scene[customerOrder], DrinkHandover)
 
     q_home = np.zeros(6)
     target_pose = SE3(1.2, 1.3, 0.8) * SE3.Rx(pi)
@@ -42,4 +46,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main() 

@@ -28,14 +28,19 @@ def build_scene(env):
     for link, (lo, hi) in zip(ur3e.links, ur3eLimits):
         link.qlim = [lo, hi]
     
-    ur3e.base = SE3(1, -1.2, 0.91)
+    ur3e.base = SE3(1.2, -1.2, 0.91)
     ur3e.add_to_env(env)
 
-    # ur3e chair
-    ur3eChair = part_mesh("SimpleTable")
-    ur3eChair.scale = (0.9,0.675,1.5)
-    ur3eChair.T = SE3(1,-1.25,0.005)
-    env.add(ur3eChair)
+    # ur3e and tx2 chair
+    robotChairPositions = [(1.2,-1.25), (0.4,-1.25)]
+    for x, y in robotChairPositions:
+        robotChair = part_mesh("SimpleTable")
+        robotChair.T = SE3(x, y, 0.005)
+        robotChair.scale = (0.9,0.675,1.5)
+        env.add(robotChair)
+    
+    
+    
 
     # tables
     tablePositions = [(1, 5), (2.5, 2), (-0.5, 2.5)]
@@ -103,10 +108,22 @@ def build_scene(env):
     beerBottle.T = SE3(1.2, -1.7, 0.95)
     env.add(beerBottle)
 
+    #cocktailShaker = part_mesh("???")
+    #cocktailShaker.scale = (1,1,1)
+    #cocktailShaker.T = SE3(0.7,-0.8,0.95)
+    cocktailShaker = sg.Cylinder(
+        radius=0.04,
+        length=0.20,            
+        pose=SE3(0.8, -0.8, 1.05),
+        color=(0.80, 0.80, 0.80, 1)
+    )
+    env.add(cocktailShaker)
+
+
     water = sg.Cylinder(
             radius=0.5,
             length=0.02,
-            pose=SE3(0.7, 0, 0.02),
+            pose=SE3(0.8, 0, 0.02),
             color=(0.2, 0.6, 1.0, 0.7)
         )
     env.add(water)
@@ -119,7 +136,7 @@ def build_scene(env):
 
     # place and add tx2_60 robot
     tx2 = TX2_60()
-    tx2.base = SE3(1, 2, 0)
+    tx2.base = SE3(0.4, -1.25, 0.9)
     tx2.q = tx2.qz
     env.add(tx2)
     env.add(sg.Mesh(os.path.join(MESH_DIR, "base_link.stl"), pose=tx2.base, color=[0.2, 0.2, 0.2]))
@@ -133,6 +150,8 @@ def build_scene(env):
             "floor": floor,
             "water": water,
             "IRB_robot": IRB4600_robot,
+            "tx2": tx2,
+            "shaker": cocktailShaker,
     }
     
 if __name__ == "__main__":
