@@ -103,6 +103,15 @@ def build_scene(env):
     beerBottle.T = SE3(1.2, -1.7, 0.95)
     env.add(beerBottle)
 
+    water = sg.Cylinder(
+            radius=0.5,
+            length=0.02,
+            pose=SE3(0.7, 0, 0.02),
+            color=(0.2, 0.6, 1.0, 0.7)
+        )
+    env.add(water)
+
+
     #Place and add IRB4600 Robot
     IRB4600_robot = IRB4600(SE3(0, 1, 0))
     env.add(IRB4600_robot.base_mesh)
@@ -122,6 +131,7 @@ def build_scene(env):
             "spirit": spiritBottle,
             "wine": wineBottle,
             "floor": floor,
+            "water": water,
             "IRB_robot": IRB4600_robot,
     }
     
