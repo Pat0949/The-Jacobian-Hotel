@@ -2,7 +2,7 @@ import pygame
 import time
 import numpy as np
 
-def manual_irb(scene, duration=300, dt=0.1):
+def manual_irb(scene, duration=300, dt=0.1, attached_object=None, object_offset=None, ray=None):
     # -- Setup Joystick --
     pygame.init()
     pygame.joystick.init()
@@ -74,6 +74,13 @@ def manual_irb(scene, duration=300, dt=0.1):
 
             dq = Jinv_dls @ dx
             robot.q = robot.q + dq * dt
+
+            if attached_object is not None and object_offset is not None:
+                robot_pose = robot.fkine(robot.q)
+                attached_object.T = robot_pose * object_offset
+
+            if ray is not None:
+                ray.update()
 
             # Animate robot
             env.step(dt)

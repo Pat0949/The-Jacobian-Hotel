@@ -121,6 +121,7 @@ def build_scene(env):
             "beer": beerBottle,
             "spirit": spiritBottle,
             "wine": wineBottle,
+            "floor": floor,
             "IRB_robot": IRB4600_robot,
     }
     

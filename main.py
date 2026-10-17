@@ -5,7 +5,7 @@ import spatialgeometry as sg
 from spatialmath import SE3
 import numpy as np
 from math import pi
-
+from raysensor import EndEffectorRay
 
 from joystickcontrols import manual_irb
 from robot_movement import solve_ik, move_arm
@@ -34,10 +34,9 @@ def main():
     target_pose = SE3(1.2, 1.3, 0.8) * SE3.Rx(pi)
     q_target = solve_ik(scene["IRB_robot"], target_pose, q_home)
 
-    move_arm(scene["IRB_robot"], q_home, q_target, env, steps=80)
-    move_arm(scene["IRB_robot"], q_target, q_home, env, steps=80)
+    ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env, max_range=1.5)
 
-    manual_irb(scene)
+    manual_irb(scene, ray=ray)
 
     input("Done. Press Enter to close\n")
 

@@ -8,22 +8,29 @@ def solve_ik(robot, target_pose, JA0):
     # returns all the necesary joint angles the .ik_LM found
     return result[0]
 
-def move_arm(robot, q_start, q_end, env, steps=80, attached_object=None, object_offset=None):
+def move_arm(robot, q_start, q_end, env, steps=80, attached_object=None, object_offset=None, ray=None):
 
-    #create a matrix of all 80 points between start and end pose
     traj = jtraj(q_start, q_end, steps).q
+    last_q = q_start
 
-    #for each 80 poses move from previous pose to the next
     for q in traj:
         robot.q = q
 
-        #if attached object, forward kinematics and offset it
+        if ray is not None and ray.hit_floor():
+            print("The end of the ray has hit the floor. Stopping the arm.")
+            robot.q = last_q
+            ray.update()
+            env.step(0.02)
+            break
+        last_q = q
+
         if attached_object is not None:
             robot_pose = robot.fkine(q)
             attached_object.T = (robot_pose * object_offset).A
-            
-        #pause time to redraw the scene
+
+        if ray is not None:
+            ray.update()
+
         env.step(0.02)
 
     return traj
-
