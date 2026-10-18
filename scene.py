@@ -119,6 +119,12 @@ def build_scene(env):
     )
     env.add(cocktailShaker)
 
+    
+    cocktailGlass = part_mesh("WineCup")
+    cocktailGlass.scale = (1.25,1,1)
+    cocktailGlass.T = SE3(0.5, -0.6, 0.95)
+    env.add(cocktailGlass)
+
 
     water = sg.Cylinder(
             radius=0.5,
@@ -152,6 +158,7 @@ def build_scene(env):
             "IRB_robot": IRB4600_robot,
             "tx2": tx2,
             "shaker": cocktailShaker,
+            "glass": cocktailGlass
     }
     
 if __name__ == "__main__":
