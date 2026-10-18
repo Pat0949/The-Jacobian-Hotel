@@ -5,7 +5,7 @@ from roboticstoolbox import jtraj
 
 GRASP = 0.22       # bottle base to the gripper (neck) [m]
 MOUTH = 0.08       # gripper to the bottle's mouth [m]
-CLEARANCE = 0.10   # ellipsoid radius around the TX2's links and held object [m]
+CLEARANCE = 0.12   # ellipsoid radius around the TX2's links and held object [m]
 
 def get_algebraic_dist(points, center_point, radii):
     return np.sum(((points - center_point) / radii) ** 2, axis=1)
@@ -125,10 +125,11 @@ def make_cocktail(env, scene):
     holding[id(tx2)] = (shaker, 0.08)
     solo(up)
     for _ in range(2):
-        solo(up + [0, 0, 0.10], steps=12)
+        solo(up + [0, 0, 0.15], steps=12)
         solo(up, steps=12)
     solo(SE3(glass.T).t + [0, 0, 0.45])
-    tip(env, tx2, shaker, 0.08, tilt)
+    tip(env, tx2, shaker, 0.08, -tilt)
+    solo(up)
     solo(grip)
     shaker.T = start
     holding[id(tx2)] = None

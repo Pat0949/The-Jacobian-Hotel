@@ -32,7 +32,7 @@ def build_scene(env):
     ur3e.add_to_env(env)
 
     # ur3e and tx2 chair
-    robotChairPositions = [(1.2,-1.25), (0.4,-1.25)]
+    robotChairPositions = [(1.2,-1.25), (0.2,-1.25)]
     for x, y in robotChairPositions:
         robotChair = part_mesh("SimpleTable")
         robotChair.T = SE3(x, y, 0.005)
@@ -142,7 +142,7 @@ def build_scene(env):
 
     # place and add tx2_60 robot
     tx2 = TX2_60()
-    tx2.base = SE3(0.4, -1.25, 0.9)
+    tx2.base = SE3(0.3, -1.22, 0.9)
     tx2.q = tx2.qz
     env.add(tx2)
     env.add(sg.Mesh(os.path.join(MESH_DIR, "base_link.stl"), pose=tx2.base, color=[0.2, 0.2, 0.2]))
