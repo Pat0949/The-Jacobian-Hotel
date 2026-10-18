@@ -5,7 +5,6 @@ import spatialgeometry as sg
 from spatialmath import SE3
 import numpy as np
 from math import pi
-
 from raysensor import EndEffectorRay
 from joystickcontrols import manual_irb
 from robot_movement import solve_ik, move_arm
