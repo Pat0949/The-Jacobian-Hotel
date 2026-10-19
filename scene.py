@@ -153,11 +153,18 @@ def build_scene(env):
     cautionSign.T = SE3(0, 1.4, 0.05)
     env.add(cautionSign)
 
-    #safety barrier
+    #safety barrier1
     safetyBarrier = part_mesh("barrier1.5x0.2x1m")
     safetyBarrier.scale = (1,1,1)
-    safetyBarrier.T = SE3(4, -1.5, 0.05) * SE3.Rz(pi/2)
+    safetyBarrier.T = SE3(3.3, -1.5, 0.05) * SE3.Rz(pi/2)
     env.add(safetyBarrier)
+
+    #safety barrier2
+    safetyBarrier2 = part_mesh("barrier1.5x0.2x1m")
+    safetyBarrier2.scale = (1,1,1)
+    safetyBarrier2.T = SE3(-1.3, -1.5, 0.05) * SE3.Rz(pi/2)
+    env.add(safetyBarrier2)
+    
 
 
     return {
