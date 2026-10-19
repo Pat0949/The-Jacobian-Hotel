@@ -147,6 +147,13 @@ def build_scene(env):
     env.add(tx2)
     env.add(sg.Mesh(os.path.join(MESH_DIR, "base_link.stl"), pose=tx2.base, color=[0.2, 0.2, 0.2]))
 
+    #caution sign
+    cautionSign = part_mesh("CautionSign")
+    cautionSign.scale = (1,1,1)
+    cautionSign.T = SE3(0, 1.4, 0.05)
+    env.add(cautionSign)
+
+
     return {
             "env": env,
             "ur3e": ur3e,

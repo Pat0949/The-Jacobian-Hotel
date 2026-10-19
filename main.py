@@ -24,7 +24,7 @@ def main():
     env.set_camera_pose([0.8, 0.37, 1.7], [0.8, -1, 1.5])
     env.step()
 
-    customerOrder = input("What is your oder? (beer, wine or cocktail) ").strip().lower()
+    customerOrder = input("What is your order? (beer, wine or cocktail) ").strip().lower()
     if customerOrder == "cocktail":
         make_cocktail(env, scene)
         cocktail_done = True
