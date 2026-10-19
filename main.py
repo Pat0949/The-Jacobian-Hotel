@@ -3,10 +3,8 @@
 import swift
 import spatialgeometry as sg
 from spatialmath import SE3
-import numpy as np
-from math import pi
 from raysensor_collision_detection import EndEffectorRay
-from joystickcontrols import manual_irb
+from joystick_mode import manual_irb
 from scene import build_scene
 from bar_movements import pick_place, make_cocktail
 
@@ -17,21 +15,31 @@ if not hasattr(sg.Shape, "_update_pyb"):
 
 DrinkHandover = SE3(1.0, -0.8, 0.95)
 
+cocktail_done = False
 
 def main():
     env = swift.Swift()
     env.launch(realtime=True)
     scene = build_scene(env)
+    env.set_camera_pose([0.8, 0.37, 1.7], [0.8, -1, 1.5])
     env.step()
 
     customerOrder = input("What is your oder? (beer, wine or cocktail) ").strip().lower()
     if customerOrder == "cocktail":
         make_cocktail(env, scene)
+        cocktail_done = True
     else:
         pick_place(env, scene["ur3e"], scene[customerOrder], DrinkHandover)
 
-    ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
-    manual_irb(scene, ray=ray)
+    if cocktail_done == True:
+        print("--------------------------------------------------------------------------------------------\n")
+        print("                                        Oh No!")
+        print("                               You Spilt Your cocktail!")
+        print("                                 Time to Clean it Up!\n")
+        input("                               (Press Enter to continue)")
+        print("\n--------------------------------------------------------------------------------------------")
+        ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
+        manual_irb(scene, ray=ray)
 
 if __name__ == "__main__":
     main()

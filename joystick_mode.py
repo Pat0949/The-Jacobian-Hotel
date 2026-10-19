@@ -1,24 +1,5 @@
 import pygame
 import numpy as np
-import spatialmath as SE3
-import spatialgeometry as sg
-
-
-def print_init_banner(joy):
-    print("\n------------------------------------------------------------------------------------------------")
-    print("                                        Joystick Controls")
-    print(f"    Left Stick: body move   Right Stick: end effector move   D-pad: up, down, left, right")
-    print("                                    Press B to reset position")
-    print("                                     Collision status: None")
-    print("                                   Press Control + C to close")
-    print("------------------------------------------------------------------------------------------------")
-
-
-def print_collision_banner():
-    print("------------------------------------------------------------------------------------------------\n")
-    print("\n                                      Floor detected!\n")
-    print("\n------------------------------------------------------------------------------------------------")
-
 
 def manual_irb(scene, dt=0.1, ray=None):
     # -- Setup Joystick --
@@ -36,10 +17,23 @@ def manual_irb(scene, dt=0.1, ray=None):
     env = scene["env"]
     water = scene["water"]
     robot = scene["IRB_robot"]
+    glass = scene["glass"]
+
+    env.set_camera_pose([0.7, 2.9, 1.9], [0.2, 0, 0.2])
 
     water_pose = water.T.copy()
     water_pose[2, 3] = 0.02
-    water.T = water_pose
+
+    #glass_pose = glass.T.copy()
+    #glass_pose[2, 3] = 1
+
+    print("\n------------------------------------------------------------------------------------")
+    print("                                     Joystick Controls")
+    print(f" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
+    print("                                    Press B to reset position")
+    print("                                   Collision status: None")
+    print("                                 Press Control + C to close")
+    print("------------------------------------------------------------------------------------")
 
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
@@ -49,8 +43,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     joystick_deadzone_threshold = 0.6  # deadzone threshold for joystick axes
     button_gain = 0.5  # button velocity gain (since buttons are binary)
 
-    # -- Print the start up message once --
-    print_init_banner(joy)
     in_collision = False
 
     # -- Main Control Loop --
@@ -85,16 +77,24 @@ def manual_irb(scene, dt=0.1, ray=None):
             robot.q = robot.q + dq * dt
 
             # check for a collision before the ray is lifted away from the floor
-            collided = ray is not None and ray.hit_floor()
+            collided = ray.hit_floor()
 
             if ray is not None:
                 ray.keep_above_floor()
                 ray.update()
 
             if collided and not in_collision:
-                print_collision_banner()
-            elif not collided and in_collision:
-                print_init_banner(joy)
+                print("------------------------------------------------------------------------------------\n")
+                print("\n                                  Floor detected!\n")
+                print("\n------------------------------------------------------------------------------------")
+            if not collided and in_collision:
+                print("\n------------------------------------------------------------------------------------")
+                print("                                     Joystick Controls")
+                print(f" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
+                print("                                    Press B to reset position")
+                print("                                   Collision status: None")
+                print("                                 Press Control + C to close")
+                print("------------------------------------------------------------------------------------")
             in_collision = collided
 
             # Animate robot
