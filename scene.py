@@ -164,6 +164,11 @@ def build_scene(env):
     safetyBarrier2.scale = (1,1,1)
     safetyBarrier2.T = SE3(-1.3, -1.5, 0.05) * SE3.Rz(pi/2)
     env.add(safetyBarrier2)
+
+    eStop = part_mesh("emergencyStopButton")
+    eStop.scale = (0.5,0.5,0.5)
+    eStop.T = SE3(1.8,-0.7,0.92)
+    env.add(eStop)
     
 
 
