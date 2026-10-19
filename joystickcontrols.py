@@ -1,7 +1,26 @@
 import pygame
 import numpy as np
+import spatialmath as SE3
+import spatialgeometry as sg
 
-def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None):
+
+def print_init_banner(joy):
+    print("\n------------------------------------------------------------------------------------------------")
+    print("                                        Joystick Controls")
+    print(f"    Left Stick: body move   Right Stick: end effector move   D-pad: up, down, left, right")
+    print("                                    Press B to reset position")
+    print("                                     Collision status: None")
+    print("                                   Press Control + C to close")
+    print("------------------------------------------------------------------------------------------------")
+
+
+def print_collision_banner():
+    print("------------------------------------------------------------------------------------------------\n")
+    print("\n                                      Floor detected!\n")
+    print("\n------------------------------------------------------------------------------------------------")
+
+
+def manual_irb(scene, dt=0.1, ray=None):
     # -- Setup Joystick --
     pygame.init()
     pygame.joystick.init()
@@ -13,13 +32,14 @@ def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None
     joy = pygame.joystick.Joystick(0)
     joy.init()
 
-    print(f"Joystick: {joy.get_name()}")
-    print(f" - {joy.get_numbuttons()} buttons")
-    print(f" - {joy.get_numaxes()} axes")
-
     # -- Setup Robot --
     env = scene["env"]
+    water = scene["water"]
     robot = scene["IRB_robot"]
+
+    water_pose = water.T.copy()
+    water_pose[2, 3] = 0.02
+    water.T = water_pose
 
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
@@ -28,6 +48,10 @@ def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None
 
     joystick_deadzone_threshold = 0.6  # deadzone threshold for joystick axes
     button_gain = 0.5  # button velocity gain (since buttons are binary)
+
+    # -- Print the start up message once --
+    print_init_banner(joy)
+    in_collision = False
 
     # -- Main Control Loop --
     try:
@@ -40,14 +64,6 @@ def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None
             axes = [0 if abs(a) < joystick_deadzone_threshold else a for a in axes_raw]
             buttons = [joy.get_button(i) for i in range(joy.get_numbuttons())]
 
-            # Read triggers separately because they rest at -1 and reach 1 when fully pressed
-            left_trigger = (axes_raw[5] + 1) / 2 if len(axes_raw) > 5 else 0
-            right_trigger = (axes_raw[4] + 1) / 2 if len(axes_raw) > 4 else 0
-
-            # Apply the same deadzone idea to the rescaled values
-            left_trigger = 0 if left_trigger < joystick_deadzone_threshold else left_trigger
-            right_trigger = 0 if right_trigger < joystick_deadzone_threshold else right_trigger
-
             # Joystick to velocity mapping
             vx = Kv * -axes[1]  # Left stick left/right
             vy = Kv * -axes[0]  # Left stick up/down
@@ -55,7 +71,7 @@ def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None
 
             wx = Kw * axes[2]  # Right stick left/right
             wy = Kw * axes[3]  # Right stick up/down
-            wz = Kw * (right_trigger - left_trigger)  # left right triggers
+            wz = Kw * (buttons[13] - buttons[14])  # left right buttons
 
             dx = np.array([vx, vy, vz, wx, wy, wz])  # 6D velocity
 
@@ -68,28 +84,29 @@ def manual_irb(scene, dt=0.1, attached_object=None, object_offset=None, ray=None
             dq = Jinv_dls @ dx
             robot.q = robot.q + dq * dt
 
-            ray.keep_above_floor()
-            ray.update()
-
-            if attached_object is not None and object_offset is not None:
-                robot_pose = robot.fkine(robot.q)
-                attached_object.T = robot_pose * object_offset
+            # check for a collision before the ray is lifted away from the floor
+            collided = ray is not None and ray.hit_floor()
 
             if ray is not None:
+                ray.keep_above_floor()
                 ray.update()
+
+            if collided and not in_collision:
+                print_collision_banner()
+            elif not collided and in_collision:
+                print_init_banner(joy)
+            in_collision = collided
 
             # Animate robot
             env.step(dt)
 
             reset_button = 1
-            glass_button = 2
-            vacuum_button = 3
             
             if buttons[reset_button]:
                 robot.q = np.zeros(6)
                 print("Resetting robot to zero configuration.")
 
     except KeyboardInterrupt:
-        print("Exiting...")
+        print(" Exiting...")
     finally:
         pygame.quit()

@@ -38,9 +38,6 @@ def build_scene(env):
         robotChair.T = SE3(x, y, 0.005)
         robotChair.scale = (0.9,0.675,1.5)
         env.add(robotChair)
-    
-    
-    
 
     # tables
     tablePositions = [(1, 5), (2.5, 2), (-0.5, 2.5)]
@@ -129,7 +126,7 @@ def build_scene(env):
     water = sg.Cylinder(
             radius=0.5,
             length=0.02,
-            pose=SE3(0.8, 0, 0.02),
+            pose=SE3(0.8, 0, -0.02),
             color=(0.2, 0.6, 1.0, 0.7)
         )
     env.add(water)
