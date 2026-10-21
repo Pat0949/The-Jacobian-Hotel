@@ -102,20 +102,24 @@ def make_cocktail(env, scene):
     holding = {id(ur3e): None, id(tx2): None}
     both = lambda targets, line=False: move_arms(env, robots, targets, holding, avoid=(tx2, ur3e), line=line)
     solo = lambda target, steps=40, line=False: move_arms(env, robots, [ur3e.q, target], holding, steps, (tx2, ur3e), line)
+    grasps = [0.15, GRASP]
     homes, starts = [r.q.copy() for r in robots], [SE3(b.T) for b in bottles]
-    necks = [s.t + [0, 0, GRASP] for s in starts]
+    necks = [s.t + [0, 0, g] for s, g in zip(starts, grasps)]
     lifted = [n + [0, 0, 0.10] for n in necks]
-    tilt, top, mouth = np.radians(110), SE3(shaker.T).t + [0, 0, 0.10], 0.08
-    pours = [top + [s * (mouth * np.sin(tilt) + 0.04), 0, 0.03 - mouth * np.cos(tilt)] for s in sides]
+    tilt, top = np.radians(110), SE3(shaker.T).t + [0, 0, 0.10]
+    mouths = [0.08, 0.08]
+    pours = [top + [s * (m * np.sin(tilt) + 0.02), 0, 0.03 - m * np.cos(tilt)] for s, m in zip(sides, mouths)]
     # 1. grab bottles and take them to the shaker
     both(necks)
-    holding.update({id(r): (b, GRASP) for r, b in zip(robots, bottles)})
+    holding.update({id(r): (b, g) for r, b, g in zip(robots, bottles, grasps)})
     both(lifted, line=True)
-    both(pours)
+    both([pours[0], pours[1] + [0, 0, 0.18]])
+    solo(pours[1], line=True)
     # 2. pour one at a time
-    for r, b, s in zip(robots, bottles, sides):
-        tip(env, r, b, GRASP, -s * tilt)
+    for r, b, s, g in zip(robots, bottles, sides, grasps):
+        tip(env, r, b, g, -s * tilt)
     # 3. put bottles back and go home
+    solo(pours[1] + [0, 0, 0.18], line=True)
     both(lifted)
     both(necks, line=True)
     for b, s in zip(bottles, starts):
@@ -126,6 +130,8 @@ def make_cocktail(env, scene):
     start = SE3(shaker.T)
     grip = start.t + [0, 0, 0.08]
     up = grip + [0, 0, 0.15]
+    shelf_spot = SE3(0.5, -1.7, 1.05)
+    shelf_grip = shelf_spot.t + [0, 0, 0.08]
     solo(grip)
     holding[id(tx2)] = (shaker, 0.08)
     solo(up, line=True)
@@ -134,7 +140,8 @@ def make_cocktail(env, scene):
         solo(up, steps=12, line=True)
     solo(SE3(glass.T).t + [0, 0, 0.45])
     tip(env, tx2, shaker, 0.08, -tilt)
-    solo(up)
-    solo(grip, line=True)
-    shaker.T, holding[id(tx2)] = start, None
+    solo(shelf_grip + [0, 0, 0.15])
+    solo(shelf_grip, line=True)
+    shaker.T, holding[id(tx2)] = shelf_spot, None
+    solo(shelf_grip + [0, 0, 0.15], line=True)
     solo(homes[1])
