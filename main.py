@@ -1,5 +1,8 @@
 #this main runs everything
-
+import matplotlib
+matplotlib.use("Agg")
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 import swift
 import spatialgeometry as sg
 from spatialmath import SE3
