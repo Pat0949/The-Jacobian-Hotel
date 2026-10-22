@@ -32,8 +32,8 @@ def robot_points(robot, q, holding):
 
 def check_points(transforms, radii_list, points):
     for T, radii in zip(transforms, radii_list):
-        points_and_ones = linalg.inv(T) @ np.hstack((points, np.ones([points.shape[0], 1]))).T
-        algebra_dist = get_algebraic_dist(np.transpose(points_and_ones)[:, :3], [0, 0, 0], radii)
+        ellipsoid_points = linalg.inv(T) @ np.hstack((points, np.ones([points.shape[0], 1]))).T
+        algebra_dist = get_algebraic_dist(np.transpose(ellipsoid_points)[:, :3], [0, 0, 0], radii)
         if np.size(np.where(algebra_dist < 1), 1) > 0:
             return True
     return False
