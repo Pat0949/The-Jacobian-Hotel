@@ -36,47 +36,11 @@ def main():
     else:
         pick_place(env, scene["ur3e"], scene[customerOrder], DrinkHandover)
 
-    if cocktail_done == True:
-        # Tech Pendant
-        xyz, rpy = calculate_dof(scene["IRB_robot"])
-
-        # Creating Labels to show XYZ, Roll, Pitch, Yaw
-        # XYZ
-        text_x, text_y, text_z = f"X: {xyz[0]}", f"Y: {xyz[1]}", f"Z: {xyz[2]}"
-        label_x, label_y, label_z = swift.Label(text_x), swift.Label(text_y), swift.Label(text_z)
-        # RPY
-        text_roll, text_pitch, text_yaw = f"Roll (φ): {rpy[0]}", f"Pitch (θ): {rpy[1]}", f"Yaw (ψ): {rpy[2]}"
-        label_roll, label_pitch, label_yaw = swift.Label(text_roll), swift.Label(text_pitch), swift.Label(text_yaw)
-        # Create list of labels
-        labels = [label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
-
-        header = ("JoyStick Movements and Controls")
-        controls_L = ("L-Stick: body move")
-        controls_R = ("R-Stick: end effector move")
-        controls_D = ("D-pad: up, down, left, right")
-        e_stop = ("Press B to Emergency Stop")
-        label_header, label_e_stop, label_c_L, label_c_R, label_c_D = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D)
-
-        # Labels
-        env.add(label_header)
-        env.add(label_c_L)
-        env.add(label_c_R)
-        env.add(label_c_D)
-        env.add(label_e_stop)
-        env.add(label_x)
-        env.add(label_y)
-        env.add(label_z)
-        env.add(label_roll)
-        env.add(label_pitch)
-        env.add(label_yaw)
-
-
-        input_thread = threading.Thread(target=scene["IRB_robot"])
-        input_thread.start()  
+    if cocktail_done == True:  
 
         # Joystick mode
         ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
-        manual_irb(scene, l_x=label_x, l_y=label_y, l_z=label_z, l_roll=label_roll, l_pitch=label_pitch, l_yaw=label_yaw, ray=ray)
+        manual_irb(scene, ray=ray)
 
         
 

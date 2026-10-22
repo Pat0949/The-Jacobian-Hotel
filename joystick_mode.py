@@ -1,8 +1,10 @@
 import pygame
+import swift
 import numpy as np
+import threading
 from spatialmath.base import *
 
-def manual_irb(scene, dt=0.1, l_x=None, l_y=None, l_z=None, l_roll=None, l_pitch=None, l_yaw=None, ray=None):
+def manual_irb(scene, dt=0.1, ray=None):
     # -- Setup Joystick --
     pygame.init()
     pygame.joystick.init()
@@ -45,6 +47,39 @@ def manual_irb(scene, dt=0.1, l_x=None, l_y=None, l_z=None, l_roll=None, l_pitch
 
     in_collision = False
 
+    # Tech Pendant
+    xyz, rpy = calculate_dof(scene["IRB_robot"])
+
+    # Creating Labels to show XYZ, Roll, Pitch, Yaw
+    # XYZ
+    text_x, text_y, text_z = f"X: {xyz[0]}", f"Y: {xyz[1]}", f"Z: {xyz[2]}"
+    label_x, label_y, label_z = swift.Label(text_x), swift.Label(text_y), swift.Label(text_z)
+    # RPY
+    text_roll, text_pitch, text_yaw = f"Roll (φ): {rpy[0]}", f"Pitch (θ): {rpy[1]}", f"Yaw (ψ): {rpy[2]}"
+    label_roll, label_pitch, label_yaw = swift.Label(text_roll), swift.Label(text_pitch), swift.Label(text_yaw)
+    # Create list of labels
+    labels = [label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
+
+    header = ("JoyStick Movements and Controls")
+    controls_L = ("L-Stick: body move")
+    controls_R = ("R-Stick: end effector move")
+    controls_D = ("D-pad: up, down, left, right")
+    e_stop = ("Press B to Emergency Stop")
+    label_header, label_e_stop, label_c_L, label_c_R, label_c_D = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D)
+
+    # Labels
+    env.add(label_header)
+    env.add(label_c_L)
+    env.add(label_c_R)
+    env.add(label_c_D)
+    env.add(label_e_stop)
+    env.add(label_x)
+    env.add(label_y)
+    env.add(label_z)
+    env.add(label_roll)
+    env.add(label_pitch)
+    env.add(label_yaw)
+
     # -- Main Control Loop --
     try:
         while True:
@@ -76,35 +111,28 @@ def manual_irb(scene, dt=0.1, l_x=None, l_y=None, l_z=None, l_roll=None, l_pitch
             dq = Jinv_dls @ dx
             robot.q = robot.q + dq * dt
 
-            # check for a collision before the ray is lifted away from the floor
-            collided = ray.hit_floor()
-
+            collided = False
             if ray is not None:
+                collided = ray.hit_floor()
                 ray.keep_above_floor()
                 ray.update()
 
             if collided and not in_collision:
-                print("------------------------------------------------------------------------------------\n")
-                print("\n                                  Floor detected!\n")
-                print("\n------------------------------------------------------------------------------------")
-            if not collided and in_collision:
-                print("\n------------------------------------------------------------------------------------")
-                print("                                     Joystick Controls")
-                print(" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
-                print("                                    Press B to reset position")
-                print("                                   Collision status: None")
-                print("                                 Press Control + C to close")
-                print("------------------------------------------------------------------------------------")
+                print("Floor detected!")
+
             in_collision = collided
 
             # calculate robots current position
             xyz, rpy = calculate_dof(robot)
-            l_x.desc = f"X: {xyz[0]}"
-            l_y.desc = f"Y: {xyz[1]}"
-            l_z.desc = f"Z: {xyz[2]}"
-            l_roll.desc = f"Roll: {rpy[0]}"
-            l_pitch.desc = f"Pitch: {rpy[1]}"
-            l_yaw.desc = f"Yaw: {rpy[2]}"
+            label_x.desc = f"X: {xyz[0]}"
+            label_y.desc = f"Y: {xyz[1]}"
+            label_z.desc = f"Z: {xyz[2]}"
+            label_roll.desc = f"Roll: {rpy[0]}"
+            label_pitch.desc = f"Pitch: {rpy[1]}"
+            label_yaw.desc = f"Yaw: {rpy[2]}"
+
+            input_thread = threading.Thread(target=scene["IRB_robot"])
+            input_thread.start()
 
             # Animate robot
             env.step(dt)
