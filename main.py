@@ -41,7 +41,7 @@ def main():
         print("                                 Time to Clean it Up!\n")
         input("                               (Press Enter to continue)")
         print("\n--------------------------------------------------------------------------------------------")
-        ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
+        ray = EndEffectorRay(scene["IRB_robgot"], scene["floor"], env)
         manual_irb(scene, ray=ray)
 
 if __name__ == "__main__":
