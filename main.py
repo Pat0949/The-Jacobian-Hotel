@@ -5,10 +5,9 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 import swift
 import spatialgeometry as sg
-import threading
 from spatialmath import SE3
 from raysensor_collision_detection import EndEffectorRay
-from joystick_mode import manual_irb, calculate_dof
+from joystick_mode import manual_irb
 from scene import build_scene
 from bar_movements import pick_place, make_cocktail
 
@@ -31,7 +30,7 @@ def main():
 
     customerOrder = input("What is your order? (beer, wine or cocktail) ").strip().lower()
     if customerOrder == "cocktail":
-        #make_cocktail(env, scene)
+        make_cocktail(env, scene)
         cocktail_done = True
     else:
         pick_place(env, scene["ur3e"], scene[customerOrder], DrinkHandover)

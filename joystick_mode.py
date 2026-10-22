@@ -15,7 +15,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     joy = pygame.joystick.Joystick(0)
     joy.init()
 
-    # -- Setup Robot --
+    # Setup scene
     env = scene["env"]
     water = scene["water"]
     robot = scene["IRB_robot"]
@@ -40,7 +40,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     button_estop = swift.Button(cb=lambda value: estop_callback(value), desc='Toggle Emergency Stop')
     env.add(button_estop)
 
-    # Tech Pendant
+    # ---- Tech Pendant ----
     xyz, rpy = calculate_dof(scene["IRB_robot"])
 
     # Creating Labels to show XYZ, Roll, Pitch, Yaw
@@ -50,8 +50,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     # RPY
     text_roll, text_pitch, text_yaw = f"Roll (φ): {rpy[0]}", f"Pitch (θ): {rpy[1]}", f"Yaw (ψ): {rpy[2]}"
     label_roll, label_pitch, label_yaw = swift.Label(text_roll), swift.Label(text_pitch), swift.Label(text_yaw)
-    # Create list of labels
-    labels = [label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
 
     header = ("JoyStick Movements and Controls")
     smessage = ("PRESS A TO ACTIVATE THE CLEANER!")
@@ -61,10 +59,9 @@ def manual_irb(scene, dt=0.1, ray=None):
     e_stop = ("Press B to Emergency Stop")
     emessage1 = ("EMERGENCY STOP BUTTON ACTIVATED\n")
     emessage2 = ("(Press B to turn off the emergency stop button)")
-    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2= swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2)
+    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2 = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2)
 
     # Labels
-    # every label is added once and only its text is changed afterwards
     all_labels = [label_smessage, label_emessage1, label_emessage2,
                   label_header, label_c_L, label_c_R, label_c_D, label_e_stop,
                   label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
@@ -81,6 +78,7 @@ def manual_irb(scene, dt=0.1, ray=None):
             axes_raw = [joy.get_axis(i) for i in range(joy.get_numaxes())]
             # Apply deadzone threshold
             axes = [0 if abs(a) < joystick_deadzone_threshold else a for a in axes_raw]
+            # Read and print raw button values
             buttons = [joy.get_button(i) for i in range(joy.get_numbuttons())]
 
             # Joystick to velocity mapping
@@ -106,6 +104,7 @@ def manual_irb(scene, dt=0.1, ray=None):
                 robot.q = robot.q + dq * dt
 
             collided = False
+
             if ray is not None:
                 collided = ray.hit_floor()
                 ray.keep_above_floor()
@@ -126,19 +125,22 @@ def manual_irb(scene, dt=0.1, ray=None):
                 label_pitch.desc = f"Pitch: {rpy[1]}"
                 label_yaw.desc = f"Yaw: {rpy[2]}"
 
-            # blank everything then fill in labels for the current state
+            # blank everything then fill in labels for the current state for tech pendant
             for lbl in all_labels:
                 lbl.desc = ""
 
             if estop_active == False and robot_active == False:
+                #start msg
                 label_smessage.desc = smessage
             elif estop_active == False and robot_active == True:
+                # controls msg
                 label_header.desc = header
                 label_c_L.desc = controls_L
                 label_c_R.desc = controls_R
                 label_c_D.desc = controls_D
                 label_e_stop.desc = e_stop
             elif estop_active == True:
+                #estop msg
                 label_emessage1.desc = emessage1
                 label_emessage2.desc = emessage2
 

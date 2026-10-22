@@ -4,11 +4,10 @@ import spatialgeometry as sg
 from spatialmath.base import skew
 from ir_support import RectangularPrism, line_plane_intersection
  
- 
-# ---------------------------------------------------------------------------------------#
 class EndEffectorRay:
  
     def __init__(self, robot, floor, env, max_range=0.5):
+
         self.robot = robot
         self.max_range = max_range
  
@@ -17,7 +16,8 @@ class EndEffectorRay:
         lwh = floor.scale.tolist()
         centre = floor.T[:3, 3].tolist()
         self.vertices, self.faces, self.face_normals = RectangularPrism(lwh[0], lwh[1], lwh[2], center=centre).get_data()
- 
+
+        #radius of ray
         r = 0.05
  
         # ray

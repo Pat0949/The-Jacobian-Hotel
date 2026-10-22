@@ -7,7 +7,6 @@ import numpy as np
 from ir_support.robots import UR3e
 from ir_support_extra_parts.parts import part_mesh
 from tx2_60 import TX2_60, MESH_DIR
-
 from IRB4600_Visual import IRB4600
 
 def build_scene(env):
@@ -122,12 +121,7 @@ def build_scene(env):
     env.add(cocktailGlass)
 
 
-    water = sg.Cylinder(
-            radius=0.6,
-            length=0.02,
-            pose=SE3(0.15, 0.1, 0.02),
-            color=(0.2, 0.6, 1.0, 0.7)
-        )
+    water = sg.Cylinder(radius=0.6, length=0.02, pose=SE3(0.15, 0.1, 0.02), color=(0.2, 0.6, 1.0, 0.7))
     env.add(water)
 
     Drunkard = part_mesh("personMaleOld")
@@ -183,7 +177,8 @@ def build_scene(env):
             "shaker": cocktailShaker,
             "glass": cocktailGlass
     }
-    
+
+#main for testing
 if __name__ == "__main__":
     env = swift.Swift()
     env.launch(realtime=True)
