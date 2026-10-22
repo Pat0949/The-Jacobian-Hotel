@@ -1,7 +1,6 @@
 import pygame
 import swift
 import numpy as np
-import threading
 from spatialmath.base import *
 
 def manual_irb(scene, dt=0.1, ray=None):
@@ -29,14 +28,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     #glass_pose = glass.T.copy()
     #glass_pose[2, 3] = 1
 
-    print("\n------------------------------------------------------------------------------------")
-    print("                                     Joystick Controls")
-    print(f" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
-    print("                                    Press B to reset position")
-    print("                                   Collision status: None")
-    print("                                 Press Control + C to close")
-    print("------------------------------------------------------------------------------------")
-
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
     Kw = 0.8  # angular velocity gain
@@ -46,6 +37,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     button_gain = 0.5  # button velocity gain (since buttons are binary)
 
     in_collision = False
+    estop_active = False
 
     # Tech Pendant
     xyz, rpy = calculate_dof(scene["IRB_robot"])
@@ -109,7 +101,8 @@ def manual_irb(scene, dt=0.1, ray=None):
             Jinv_dls = np.linalg.inv(JTJ + lambda_I) @ J.T
 
             dq = Jinv_dls @ dx
-            robot.q = robot.q + dq * dt
+            if estop_active == False:
+                robot.q = robot.q + dq * dt
 
             collided = False
             if ray is not None:
@@ -131,17 +124,15 @@ def manual_irb(scene, dt=0.1, ray=None):
             label_pitch.desc = f"Pitch: {rpy[1]}"
             label_yaw.desc = f"Yaw: {rpy[2]}"
 
-            input_thread = threading.Thread(target=scene["IRB_robot"])
-            input_thread.start()
+            if buttons[1] and not estop_active:
+                print("Emergency stop pressed")
+                estop_active = True
+            elif buttons[1] and estop_active:
+                print("Emergency stop depressed")
+                estop_active = False
 
             # Animate robot
             env.step(dt)
-
-            reset_button = 1
-            
-            if buttons[reset_button]:
-                robot.q = np.zeros(6)
-                print("Resetting robot to zero configuration.")
 
     except KeyboardInterrupt:
         print(" Exiting...")
