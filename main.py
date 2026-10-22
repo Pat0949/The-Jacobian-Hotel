@@ -41,9 +41,5 @@ def main():
         ray = EndEffectorRay(scene["IRB_robot"], scene["floor"], env)
         manual_irb(scene, ray=ray)
 
-    input("i wonder if this prints")
-
-        
-
 if __name__ == "__main__":
     main()

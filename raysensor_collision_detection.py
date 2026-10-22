@@ -30,8 +30,12 @@ class EndEffectorRay:
         self.update()
  
     def get_ray_lines(self):
+        # forward kinematics
         tr = self.robot.fkine(self.robot.q).A
         lines = []
+        #rotate by [:3, 3] to follow the end effector
+        # tr 3,2 is the end effectors z axis
+        # each end point is the start point plus the max range in that direction
         for offset in self.line_offsets:
             start_p = tr[:3, 3] + tr[:3, :3] @ offset
             end_p = start_p + self.max_range * tr[:3, 2]
@@ -56,8 +60,9 @@ class EndEffectorRay:
  
         # if any of the 4 lines has hit the floor lift the ray back up
         if self.hit_floor():
-            # the lowest line end is the one furthest below the floor
+            # the lowest line z value
             ends_z = [end_p[2] for start_p, end_p in lines]
+            # lowest line
             lowest = int(np.argmin(ends_z))
             lift = max(self.floor_z - ends_z[lowest] + 0.001, 0.0)
  
@@ -73,26 +78,30 @@ class EndEffectorRay:
             self.robot.q = np.clip(self.robot.q + dq, self.robot.qlim[0], self.robot.qlim[1])
  
 def is_intersection_point_inside_triangle(intersect_p, triangle_verts):
+    #edge vectors from all vertexes
     u = triangle_verts[1, :] - triangle_verts[0, :]
     v = triangle_verts[2, :] - triangle_verts[0, :]
- 
+
+    #dot products
     uu = np.dot(u, u)
     uv = np.dot(u, v)
     vv = np.dot(v, v)
- 
+
+    # from vertex to intersection point
     w = intersect_p - triangle_verts[0, :]
     wu = np.dot(w, u)
     wv = np.dot(w, v)
- 
+
+    #the determinant
     D = uv * uv - uu * vv
  
     # Get and test parametric coords (s and t)
     s = (uv * wv - vv * wu) / D
-    if s < 0.0 or s > 1.0:  # intersect_p is outside the triangle
+    if s < 0.0 or s > 1.0:  # intersection is outside the triangle
         return 0
  
     t = (uv * wu - uu * wv) / D
-    if t < 0.0 or (s + t) > 1.0:  # intersect_p is outside the triangle
+    if t < 0.0 or (s + t) > 1.0:  # intersection is outside the triangle
         return False
  
     return True  # intersect_p is in the triangle

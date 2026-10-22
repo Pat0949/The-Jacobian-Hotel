@@ -37,6 +37,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     estop_active = False
     robot_active = False
 
+    # lambda function passes the button’s value to estop_callback
     button_estop = swift.Button(cb=lambda value: estop_callback(value), desc='Toggle Emergency Stop')
     env.add(button_estop)
 
