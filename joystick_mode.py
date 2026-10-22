@@ -25,9 +25,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     water_pose = water.T.copy()
     water_pose[2, 3] = 0.02
 
-    #glass_pose = glass.T.copy()
-    #glass_pose[2, 3] = 1
-
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
     Kw = 0.8  # angular velocity gain
@@ -39,6 +36,9 @@ def manual_irb(scene, dt=0.1, ray=None):
     in_collision = False
     estop_active = False
     robot_active = False
+
+    button_estop = swift.Button(cb=lambda value: estop_callback(value), desc='Toggle Emergency Stop')
+    env.add(button_estop)
 
     # Tech Pendant
     xyz, rpy = calculate_dof(scene["IRB_robot"])
@@ -153,6 +153,12 @@ def manual_irb(scene, dt=0.1, ray=None):
             if buttons[0] and not estop_active:
                 print("Robot Activated")
                 robot_active = True
+
+            # callback for swift estop
+            def estop_callback(value):
+                nonlocal estop_active, robot_active
+                estop_active = not estop_active
+                robot_active = False
 
             # Animate robot
             env.step(dt)

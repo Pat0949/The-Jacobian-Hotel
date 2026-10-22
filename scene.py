@@ -169,8 +169,6 @@ def build_scene(env):
     eStop.scale = (0.5,0.5,0.5)
     eStop.T = SE3(1.8,-0.7,0.92)
     env.add(eStop)
-    
-
 
     return {
             "env": env,
@@ -191,6 +189,3 @@ if __name__ == "__main__":
     env.launch(realtime=True)
     build_scene(env)
     input("enter to close it")
-#ddddd
-
-#pleaase please please
