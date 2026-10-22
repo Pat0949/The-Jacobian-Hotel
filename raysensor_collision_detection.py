@@ -18,14 +18,13 @@ class EndEffectorRay:
         centre = floor.T[:3, 3].tolist()
         self.vertices, self.faces, self.face_normals = RectangularPrism(lwh[0], lwh[1], lwh[2], center=centre).get_data()
  
-        self.beam_radius = 0.05
+        r = 0.05
  
         # ray
-        self.beam = sg.Cylinder(radius=self.beam_radius, length=self.max_range, color=(1.0, 1.0, 1.0, 0.6))
+        self.beam = sg.Cylinder(radius=r, length=self.max_range, color=(1.0, 1.0, 1.0, 0.6))
         env.add(self.beam)
  
-        # 4 lines along the ray as wide as the beam
-        r = self.beam_radius
+        # four lines along the ray as wide as the beam
         self.line_offsets = np.array([[r, r, 0], [-r, r, 0], [-r, -r, 0], [r, -r, 0]])
  
         self.update()

@@ -90,7 +90,7 @@ def manual_irb(scene, dt=0.1, l_x=None, l_y=None, l_z=None, l_roll=None, l_pitch
             if not collided and in_collision:
                 print("\n------------------------------------------------------------------------------------")
                 print("                                     Joystick Controls")
-                print(f" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
+                print(" L-Stick: body move   R-Stick: end effector move   D-pad: up, down, left, right")
                 print("                                    Press B to reset position")
                 print("                                   Collision status: None")
                 print("                                 Press Control + C to close")
