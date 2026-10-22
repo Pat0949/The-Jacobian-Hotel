@@ -1,7 +1,8 @@
 import pygame
 import numpy as np
+from spatialmath.base import *
 
-def manual_irb(scene, dt=0.1, ray=None):
+def manual_irb(scene, dt=0.1, l_x=None, l_y=None, l_z=None, l_roll=None, l_pitch=None, l_yaw=None, ray=None):
     # -- Setup Joystick --
     pygame.init()
     pygame.joystick.init()
@@ -17,7 +18,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     env = scene["env"]
     water = scene["water"]
     robot = scene["IRB_robot"]
-    glass = scene["glass"]
 
     env.set_camera_pose([0.7, 2.9, 1.9], [0.2, 0, 0.2])
 
@@ -48,7 +48,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     # -- Main Control Loop --
     try:
         while True:
-            pygame.event.pump()
+            pygame.event.pump()        
 
             # Read and print raw axis values
             axes_raw = [joy.get_axis(i) for i in range(joy.get_numaxes())]
@@ -97,6 +97,15 @@ def manual_irb(scene, dt=0.1, ray=None):
                 print("------------------------------------------------------------------------------------")
             in_collision = collided
 
+            # calculate robots current position
+            xyz, rpy = calculate_dof(robot)
+            l_x.desc = f"X: {xyz[0]}"
+            l_y.desc = f"Y: {xyz[1]}"
+            l_z.desc = f"Z: {xyz[2]}"
+            l_roll.desc = f"Roll: {rpy[0]}"
+            l_pitch.desc = f"Pitch: {rpy[1]}"
+            l_yaw.desc = f"Yaw: {rpy[2]}"
+
             # Animate robot
             env.step(dt)
 
@@ -110,3 +119,11 @@ def manual_irb(scene, dt=0.1, ray=None):
         print(" Exiting...")
     finally:
         pygame.quit()
+
+def calculate_dof(robot):
+
+    ee_tr = robot.fkine(robot.q).A
+    xyz = np.round(ee_tr[0:3, 3], 3)
+    rpy = np.round(tr2rpy(ee_tr, unit="deg"), 2)
+
+    return xyz, rpy
