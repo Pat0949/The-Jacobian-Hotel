@@ -38,6 +38,7 @@ def manual_irb(scene, dt=0.1, ray=None):
 
     in_collision = False
     estop_active = False
+    robot_active = False
 
     # Tech Pendant
     xyz, rpy = calculate_dof(scene["IRB_robot"])
@@ -53,24 +54,23 @@ def manual_irb(scene, dt=0.1, ray=None):
     labels = [label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
 
     header = ("JoyStick Movements and Controls")
+    smessage = ("PRESS A TO ACTIVATE THE CLEANER!")
     controls_L = ("L-Stick: body move")
     controls_R = ("R-Stick: end effector move")
     controls_D = ("D-pad: up, down, left, right")
     e_stop = ("Press B to Emergency Stop")
-    label_header, label_e_stop, label_c_L, label_c_R, label_c_D = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D)
+    emessage1 = ("EMERGENCY STOP BUTTON ACTIVATED\n")
+    emessage2 = ("(Press B to turn off the emergency stop button)")
+    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2= swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2)
 
     # Labels
-    env.add(label_header)
-    env.add(label_c_L)
-    env.add(label_c_R)
-    env.add(label_c_D)
-    env.add(label_e_stop)
-    env.add(label_x)
-    env.add(label_y)
-    env.add(label_z)
-    env.add(label_roll)
-    env.add(label_pitch)
-    env.add(label_yaw)
+    # every label is added once and only its text is changed afterwards
+    all_labels = [label_smessage, label_emessage1, label_emessage2,
+                  label_header, label_c_L, label_c_R, label_c_D, label_e_stop,
+                  label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
+
+    for lbl in all_labels:
+        env.add(lbl)
 
     # -- Main Control Loop --
     try:
@@ -101,7 +101,8 @@ def manual_irb(scene, dt=0.1, ray=None):
             Jinv_dls = np.linalg.inv(JTJ + lambda_I) @ J.T
 
             dq = Jinv_dls @ dx
-            if estop_active == False:
+
+            if estop_active == False and robot_active:
                 robot.q = robot.q + dq * dt
 
             collided = False
@@ -115,21 +116,43 @@ def manual_irb(scene, dt=0.1, ray=None):
 
             in_collision = collided
 
-            # calculate robots current position
-            xyz, rpy = calculate_dof(robot)
-            label_x.desc = f"X: {xyz[0]}"
-            label_y.desc = f"Y: {xyz[1]}"
-            label_z.desc = f"Z: {xyz[2]}"
-            label_roll.desc = f"Roll: {rpy[0]}"
-            label_pitch.desc = f"Pitch: {rpy[1]}"
-            label_yaw.desc = f"Yaw: {rpy[2]}"
+            if estop_active == False and robot_active:
+                # calculate robots current position
+                xyz, rpy = calculate_dof(robot)
+                label_x.desc = f"X: {xyz[0]}"
+                label_y.desc = f"Y: {xyz[1]}"
+                label_z.desc = f"Z: {xyz[2]}"
+                label_roll.desc = f"Roll: {rpy[0]}"
+                label_pitch.desc = f"Pitch: {rpy[1]}"
+                label_yaw.desc = f"Yaw: {rpy[2]}"
+
+            # blank everything then fill in labels for the current state
+            for lbl in all_labels:
+                lbl.desc = ""
+
+            if estop_active == False and robot_active == False:
+                label_smessage.desc = smessage
+            elif estop_active == False and robot_active == True:
+                label_header.desc = header
+                label_c_L.desc = controls_L
+                label_c_R.desc = controls_R
+                label_c_D.desc = controls_D
+                label_e_stop.desc = e_stop
+            elif estop_active == True:
+                label_emessage1.desc = emessage1
+                label_emessage2.desc = emessage2
 
             if buttons[1] and not estop_active:
-                print("Emergency stop pressed")
+                print("Emergency Stop On")
                 estop_active = True
+                robot_active = False
             elif buttons[1] and estop_active:
-                print("Emergency stop depressed")
+                print("Emergency Stop Off")
                 estop_active = False
+
+            if buttons[0] and not estop_active:
+                print("Robot Activated")
+                robot_active = True
 
             # Animate robot
             env.step(dt)
