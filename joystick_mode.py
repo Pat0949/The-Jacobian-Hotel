@@ -170,7 +170,7 @@ def manual_irb(scene, dt=0.1, ray=None):
                     print (old_x)
                     print (new_x)
                     print("CLEANING")
-                    clean = clean + 1
+                    clean = clean + 2
                     old_x = new_x
                 elif clean is 100 and robot_active:
                     print("All Clean! :)")
