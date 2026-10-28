@@ -28,7 +28,7 @@ def main():
 
     customerOrder = input("What is your order? (beer, wine or cocktail) ").strip().lower()
     if customerOrder == "cocktail":
-        #make_cocktail(env, scene)
+        make_cocktail(env, scene)
         cocktail_done = True
     else:
         pick_place(env, scene["ur3e"], scene[customerOrder], DrinkHandover)

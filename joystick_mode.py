@@ -34,6 +34,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     robot_active = False
 
     clean = 0
+    old_x = 0
 
     if clean is not 100:
         water_pose = water.T.copy()
@@ -69,7 +70,7 @@ def manual_irb(scene, dt=0.1, ray=None):
     label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2, label_cdetected, label_wdetected = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2), swift.Label(cdetected), swift.Label(wdetected)
 
     # Labels
-    all_labels = [label_smessage, label_cdetected, label_wdetected, label_emessage1, label_emessage2,
+    all_labels = [label_smessage, label_wdetected, label_cdetected, label_emessage1, label_emessage2,
                   label_header, label_c_L, label_c_R, label_c_D, label_e_stop,
                   label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
 
@@ -134,6 +135,7 @@ def manual_irb(scene, dt=0.1, ray=None):
                 label_c_R.desc = controls_R
                 label_c_D.desc = controls_D
                 label_e_stop.desc = e_stop
+                label_wdetected.desc = ("Cleaning! (",clean,"%)")
             elif estop_active == True:
                 #estop msg
                 label_emessage1.desc = emessage1
@@ -164,10 +166,12 @@ def manual_irb(scene, dt=0.1, ray=None):
                 if collided:
                     print("Floor detected!")
                     label_cdetected.desc = cdetected
-                if ray.hit_water() and clean is not 100 and robot_active:
+                if ray.hit_water() and clean is not 100 and robot_active and new_x != old_x:
+                    print (old_x)
+                    print (new_x)
                     print("CLEANING")
                     clean = clean + 1
-                    label_wdetected.desc = ("Cleaning! (",clean,"%)")
+                    old_x = new_x
                 elif clean is 100 and robot_active:
                     print("All Clean! :)")
                     label_wdetected.desc = ("Spillage Cleaned! :)")
@@ -177,6 +181,7 @@ def manual_irb(scene, dt=0.1, ray=None):
                 ray.keep_above_floor()
                 ray.update()
 
+            new_x = xyz[0]
 
             # Animate robot
             env.step(dt)
