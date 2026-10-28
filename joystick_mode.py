@@ -24,6 +24,7 @@ def manual_irb(scene, dt=0.1, ray=None):
 
     water_pose = water.T.copy()
     water_pose[2, 3] = 0.02
+    water.T = water_pose
 
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
@@ -33,7 +34,6 @@ def manual_irb(scene, dt=0.1, ray=None):
     joystick_deadzone_threshold = 0.6  # deadzone threshold for joystick axes
     button_gain = 0.5  # button velocity gain (since buttons are binary)
 
-    in_collision = False
     estop_active = False
     robot_active = False
 
@@ -60,10 +60,11 @@ def manual_irb(scene, dt=0.1, ray=None):
     e_stop = ("Press B to Emergency Stop")
     emessage1 = ("EMERGENCY STOP BUTTON ACTIVATED\n")
     emessage2 = ("(Press B to turn off the emergency stop button)")
-    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2 = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2)
+    cdetected = ("Floor Detected")
+    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2, label_cdetected = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2), swift.Label(cdetected)
 
     # Labels
-    all_labels = [label_smessage, label_emessage1, label_emessage2,
+    all_labels = [label_smessage, label_cdetected, label_emessage1, label_emessage2,
                   label_header, label_c_L, label_c_R, label_c_D, label_e_stop,
                   label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
 
@@ -104,17 +105,9 @@ def manual_irb(scene, dt=0.1, ray=None):
             if estop_active == False and robot_active:
                 robot.q = robot.q + dq * dt
 
-            collided = False
-
-            if ray is not None:
-                collided = ray.hit_floor()
-                ray.keep_above_floor()
-                ray.update()
-
-            if collided and not in_collision:
-                print("Floor detected!")
-
-            in_collision = collided
+            # blank everything then fill in labels for the current state for tech pendant
+            for lbl in all_labels:
+                lbl.desc = ""
 
             if estop_active == False and robot_active:
                 # calculate robots current position
@@ -125,10 +118,6 @@ def manual_irb(scene, dt=0.1, ray=None):
                 label_roll.desc = f"Roll: {rpy[0]}"
                 label_pitch.desc = f"Pitch: {rpy[1]}"
                 label_yaw.desc = f"Yaw: {rpy[2]}"
-
-            # blank everything then fill in labels for the current state for tech pendant
-            for lbl in all_labels:
-                lbl.desc = ""
 
             if estop_active == False and robot_active == False:
                 #start msg
@@ -162,6 +151,23 @@ def manual_irb(scene, dt=0.1, ray=None):
                 nonlocal estop_active, robot_active
                 estop_active = not estop_active
                 robot_active = False
+
+            collided = False
+
+            if ray is not None:
+                collided = ray.hit_floor()
+                if collided:
+                    print("Floor detected!")
+                    label_cdetected.desc = cdetected
+                ray.keep_above_floor()
+                ray.update()
+
+            #label_x.desc = text_x
+            #label_y.desc = text_y
+            #label_z.desc = text_z
+            #label_roll.desc = text_roll
+            #label_pitch.desc = text_pitch
+            #label_yaw.desc = text_yaw
 
             # Animate robot
             env.step(dt)

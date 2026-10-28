@@ -120,14 +120,12 @@ def build_scene(env):
     cocktailGlass.T = SE3(0.5, -0.6, 0.95)
     env.add(cocktailGlass)
 
-
-    water = sg.Cylinder(radius=0.6, length=0.02, pose=SE3(0.15, 0.1, 0.02), color=(0.2, 0.6, 1.0, 0.7))
+    water = sg.Cylinder(radius=0.6, length=0.02, pose=SE3(0.15, 0.1, -0.02), color=(0.2, 0.6, 1.0, 0.7))
     env.add(water)
 
     Drunkard = part_mesh("personMaleOld")
     Drunkard.T = SE3(1.2,0.45,-0.05) * SE3.Rz(-pi/6) * SE3.Rx(-pi/16)
     env.add(Drunkard)
-
 
     #Place and add IRB4600 Robot
     IRB4600_robot = IRB4600(SE3(-1.2, 0.5, 0))
