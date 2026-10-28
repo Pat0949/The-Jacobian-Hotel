@@ -22,10 +22,6 @@ def manual_irb(scene, dt=0.1, ray=None):
 
     env.set_camera_pose([0.7, 2.9, 1.9], [0.2, 0, 0.2])
 
-    water_pose = water.T.copy()
-    water_pose[2, 3] = 0.02
-    water.T = water_pose
-
     # -- Simulation Parameters --
     Kv = 0.3  # linear velocity gain
     Kw = 0.8  # angular velocity gain
@@ -36,6 +32,14 @@ def manual_irb(scene, dt=0.1, ray=None):
 
     estop_active = False
     robot_active = False
+
+    clean = 0
+
+    if clean is not 100:
+        water_pose = water.T.copy()
+        water_pose[2, 3] = 0.02
+        water.T = water_pose
+
 
     # lambda function passes the button’s value to estop_callback
     button_estop = swift.Button(cb=lambda value: estop_callback(value), desc='Toggle Emergency Stop')
@@ -61,10 +65,11 @@ def manual_irb(scene, dt=0.1, ray=None):
     emessage1 = ("EMERGENCY STOP BUTTON ACTIVATED\n")
     emessage2 = ("(Press B to turn off the emergency stop button)")
     cdetected = ("Floor Detected")
-    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2, label_cdetected = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2), swift.Label(cdetected)
+    wdetected = ("Cleaning! (",clean,"%)")
+    label_header, label_e_stop, label_c_L, label_c_R, label_c_D, label_smessage, label_emessage1, label_emessage2, label_cdetected, label_wdetected = swift.Label(header), swift.Label(e_stop), swift.Label(controls_L), swift.Label(controls_R), swift.Label(controls_D), swift.Label(smessage), swift.Label(emessage1), swift.Label(emessage2), swift.Label(cdetected), swift.Label(wdetected)
 
     # Labels
-    all_labels = [label_smessage, label_cdetected, label_emessage1, label_emessage2,
+    all_labels = [label_smessage, label_cdetected, label_wdetected, label_emessage1, label_emessage2,
                   label_header, label_c_L, label_c_R, label_c_D, label_e_stop,
                   label_x, label_y, label_z, label_roll, label_pitch, label_yaw]
 
@@ -159,15 +164,19 @@ def manual_irb(scene, dt=0.1, ray=None):
                 if collided:
                     print("Floor detected!")
                     label_cdetected.desc = cdetected
+                if ray.hit_water() and clean is not 100 and robot_active:
+                    print("CLEANING")
+                    clean = clean + 1
+                    label_wdetected.desc = ("Cleaning! (",clean,"%)")
+                elif clean is 100 and robot_active:
+                    print("All Clean! :)")
+                    label_wdetected.desc = ("Spillage Cleaned! :)")
+                    lower_water = water.T.copy()
+                    lower_water[2, 3] = -0.02
+                    water.T = lower_water
                 ray.keep_above_floor()
                 ray.update()
 
-            #label_x.desc = text_x
-            #label_y.desc = text_y
-            #label_z.desc = text_z
-            #label_roll.desc = text_roll
-            #label_pitch.desc = text_pitch
-            #label_yaw.desc = text_yaw
 
             # Animate robot
             env.step(dt)

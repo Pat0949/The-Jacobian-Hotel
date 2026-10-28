@@ -3,19 +3,28 @@ from itertools import combinations
 import spatialgeometry as sg
 from spatialmath.base import skew
 from ir_support import RectangularPrism, line_plane_intersection
+import trimesh
  
 class EndEffectorRay:
  
-    def __init__(self, robot, floor, env, max_range=0.5):
+    def __init__(self, robot, floor, water, env, max_range=0.5):
 
         self.robot = robot
         self.max_range = max_range
  
-        # height of the top of the floor
+        # height of floor
         self.floor_z = floor.T[2, 3] + floor.scale[2] / 2
         lwh = floor.scale.tolist()
         centre = floor.T[:3, 3].tolist()
         self.vertices, self.faces, self.face_normals = RectangularPrism(lwh[0], lwh[1], lwh[2], center=centre).get_data()
+
+        # height of water
+        self.water_z = water.T[2,3] + water.length/2
+        water_mesh = trimesh.creation.cylinder(radius=water.radius, height= (5 * water.length))
+        water_mesh.apply_transform(water.T)
+        self.water_vertices = np.array(water_mesh.vertices)
+        self.water_faces = np.array(water_mesh.faces)
+        self.water_face_normals = np.array(water_mesh.face_normals)
 
         #radius of ray
         r = 0.05
@@ -47,6 +56,13 @@ class EndEffectorRay:
             if is_collision(start_p, end_p, self.faces, self.vertices, self.face_normals):
                 return True
         return False
+
+    def hit_water(self):
+        for start_p, end_p in self.get_ray_lines():
+            if is_collision(start_p, end_p, self.water_faces, self.water_vertices, self.water_face_normals):
+                return True
+        return False
+
  
     def update(self):
         tr = self.robot.fkine(self.robot.q).A
